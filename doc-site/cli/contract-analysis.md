@@ -12,6 +12,122 @@ Seven commands for reviewing, comparing, and benchmarking contracts under the la
 
 *Plate I.a — the original, kept for reference.*
 
+## /legal first-read
+
+**Why use this?** A contract has just landed in your inbox and you need a view in seconds, not an afternoon. This is the senior-counsel triage: a sub-15-second opinionated first read that classifies the contract, scores the top issues on a likelihood × severity matrix, and hands you one verdict -- SIGN, NEGOTIATE, or WALK -- before you commit to a full review.
+
+The natural entry point. It does not exposit clause-by-clause -- it forms a view. Think of a senior partner reading a contract over coffee: fifteen seconds, one verdict, a tight risk matrix, and a steer. The deep work, if it is needed, follows -- RED-tier contracts auto-route to [/legal review](/cli/contract-analysis#legal-review).
+
+![First read (broadsheet rebrand) — the partner forms a view](/images/first-read-2026.jpg)
+
+*Plate II — the senior-counsel triage.*
+
+### Syntax
+
+```bash
+/legal first-read <file>
+```
+
+Accepts all three input shapes: a file path, pasted contract text, or a URL to a contract document.
+
+### What it does
+
+1. **Phase 0 -- Escalation check (runs first)**: Scans for signals that demand a solicitor *now* -- active litigation or pre-action correspondence (LBA, Part 36, claim form), regulator action (FCA, ICO, HMRC, SRA, CMA, Ofcom, HSE), a personal data breach affecting 100+ subjects or special-category/children's data, criminal-liability exposure (ECCTA failure-to-prevent fraud, MLR, bribery, sanctions), a limitation period under 30 days, director personal-liability indicators, or a whistleblowing disclosure. If any fire, the output is topped with an **ESCALATE -- INSTRUCT A SOLICITOR NOW** banner naming the trigger.
+2. **Phase 1 -- Classify**: Identifies the contract type in the first pass and calibrates severity and likelihood priors against it (see the type lookup below).
+3. **Phase 2 -- Matrix**: Picks the top five issues maximum (fewer is better on a clean contract), scores each for severity and likelihood, and reads off the tier.
+4. **Phase 3 -- Verdict**: Returns one editorial headline -- SIGN, NEGOTIATE, or WALK -- with a two-to-three-sentence partner-style rationale.
+5. **Phase 4 -- Auto-escalate**: Where the trigger conditions fire, ends with an explicit hand-off to [/legal review](/cli/contract-analysis#legal-review) for the full five-agent deep dive.
+
+### Contract types it triages
+
+The classifier maps signals to type and to where the money typically goes wrong:
+
+| Signals | Likely type | Where the money goes wrong |
+|---------|-------------|----------------------------|
+| Deliverables, retainer, statement of work | Services / MSA / SOW | Scope creep, payment timing, IP ownership, termination for convenience |
+| Salary, notice period, post-termination restrictions | Employment | Restrictive covenants, IP assignment, statutory floor, discrimination |
+| Confidential information, receiving party, residual knowledge | NDA | Definition breadth, term, permitted disclosures, IP carve-outs |
+| Subscription, SLA, uptime, licence grant, processor terms | SaaS | Auto-renewal, data ownership, liability cap vs fees, UK GDPR Art. 28 |
+| Independent contractor, IR35, off-payroll, kill fee | Freelance / Contractor | Worker-status risk, IP assignment, substitution clauses |
+| Landlord, tenant, premises, rent review, break clause | Lease / Tenancy | Repair obligations, dilapidations, break conditionality |
+| Buyer, seller, purchase price, completion accounts, warranties | M&A / SPA | Warranty cap, indemnity scope, disclosure letter, earn-out mechanics |
+| Investor, valuation cap, drag/tag, pre-emption | Investment / SHA / SAFE | Liquidation preference, board control, dilution, founder vesting |
+| Facility, security, covenants, events of default | Finance | Cross-default, MAC clauses, security perfection, enforcement triggers |
+
+For employment and lease signals the skill applies the [Employment Rights Act 1996](/reference/legislation) statutory floor and notes any reform whose status it needs to verify (for example the Renters' Rights Act 2025 as its provisions commence, or post-2024 employment reforms) -- it labels these "status to verify" rather than asserting they are in force, and the skills run live in-force checks where the host provides legislation tools.
+
+### The likelihood × severity matrix
+
+Each issue is scored on two axes and the tier read straight off the grid.
+
+**Severity** -- financial exposure plus enforceability under England and Wales law:
+
+| Level | What it means |
+|-------|---------------|
+| **HIGH** | Uncapped or multi-million exposure; loss of a core asset (IP, key data, premises); criminal or regulatory liability; breach of a statutory floor |
+| **MEDIUM** | Capped but material exposure; meaningful operational drag; defensible if litigated |
+| **LOW** | Annoying, asymmetric, but commercially survivable |
+
+**Likelihood** -- the probability the clause actually bites, calibrated to counterparty, deal size, industry norms, and whether the trigger is mandatory or discretionary: **LIKELY**, **POSSIBLE**, or **UNLIKELY**.
+
+| Severity \ Likelihood | LIKELY | POSSIBLE | UNLIKELY |
+|-----------------------|--------|----------|----------|
+| **HIGH**              | RED    | RED      | AMBER    |
+| **MEDIUM**            | AMBER  | YELLOW   | YELLOW   |
+| **LOW**               | YELLOW | GREEN    | GREEN    |
+
+::: tip Likelihood is the point
+This skill weights likelihood deliberately -- the half the deeper reviews tend to under-weight. A theoretical uncapped indemnity that no rational counterparty would ever invoke is not the same risk as one with an easy trigger and a clear motive. The triage calibrates to deal context rather than treating every clause as live.
+:::
+
+### The verdict
+
+| Verdict | When |
+|---------|------|
+| **SIGN** | Only GREEN and YELLOW issues. Within market norms for the type. A defensible commercial decision today. |
+| **NEGOTIATE** | YELLOW plus AMBER, where the AMBER is fixable in a single round of mark-up. Worth pushing back on; not worth walking. |
+| **WALK** | Any RED-tier issue, or AMBER concentrated in unilateral terms (one-sided termination, uncapped indemnity, broad assignment, sole-discretion drafting). Not salvageable as written without a structural rewrite. |
+
+### When it auto-routes to /legal review
+
+The triage forces a hand-off to the deep review when:
+
+1. Any **RED**-tier issue appears in the matrix.
+2. The type is **M&A / SPA**, **Investment / SHA / SAFE**, **Employment with post-termination restrictive covenants**, **Lease with a term over five years**, or a **Finance facility with security**.
+3. The verdict is **WALK**.
+4. The prompt signals high stakes (deal value, regulatory sensitivity, board approval pending).
+
+In those cases the output ends with an explicit line pointing to [/legal review](/cli/contract-analysis#legal-review) for the weighted Contract Safety Score across five parallel agents.
+
+### Example
+
+```bash
+/legal first-read ./contracts/acme-msa.pdf
+```
+
+### Output
+
+`FIRST-READ-[short-name]-[date].md` containing:
+- The canonical AI-generated legal analysis disclaimer (and, where triggered, the ESCALATE banner above it)
+- A metadata table (contract type, parties, effective date, governing law, analysis date)
+- The **VERDICT** headline (SIGN / NEGOTIATE / WALK) with a partner-voice rationale
+- The risk matrix (up to five issues, each with severity, likelihood, tier, and a one-line rationale)
+- A "Top 3 to push back on" or "Top 3 walk-away reasons" list (omitted when the verdict is SIGN)
+- A hand-off to `/legal review` for the full deep dive
+
+::: warning Plain-text tiers, not the usual indicators
+The deeper skills use 🔴 / 🟡 / 🟢. This triage deliberately uses RED / AMBER / YELLOW / GREEN labels in plain text -- it is a different register, the broadsheet leader column rather than the clause-by-clause file note.
+:::
+
+### Related commands
+
+- [/legal review](/cli/contract-analysis#legal-review) -- the full five-agent deep dive a RED-tier first read routes to
+- [/legal risks](/cli/contract-analysis#legal-risks) -- clause-by-clause severity scoring with financial exposure
+- [/legal negotiate](/cli/contract-analysis#legal-negotiate) -- counter-proposals and replacement language once you decide to push back
+- [/legal missing](/cli/contract-analysis#legal-missing) -- protections that should be present but are not
+
+---
+
 ## /legal review
 
 **Why use this?** You have been sent a contract. Before you sign, you want to know: is this safe? What are the risks? What should I push back on?

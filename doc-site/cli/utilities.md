@@ -200,3 +200,11 @@ After downloading, you can test any UK Legal Skills command against the samples:
 # Generate a PDF from the analysis
 /legal report-pdf
 ```
+
+---
+
+## Related commands
+
+- [/legal review](/cli/contract-analysis) — the review whose output you export
+- [Example output](/reference/sample-report) — a sample review report
+- [All commands](/reference/all-commands) — the full catalogue

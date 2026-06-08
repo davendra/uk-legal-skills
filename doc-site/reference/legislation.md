@@ -6,6 +6,10 @@ This page catalogues every UK statute referenced by the AI Legal Assistant, orga
 All legislation listed here applies to **England & Wales** only. Scottish and Northern Irish equivalents are intentionally excluded from the tool suite.
 :::
 
+::: warning Commencement — 2025 reforms are not all in force
+Several Acts catalogued below received Royal Assent in 2025 but commence **in phases**, not on a single switch-on date. In particular, the **Employment Rights Act 2025**, the **Renters' Rights Act 2025** (Royal Assent 27 October 2025; GOV.UK's roadmap puts the first major private-rented-sector phase at **1 May 2026**), and the **Data (Use and Access) Act 2025** each contain provisions that come into force on later dates set by commencement regulations. Treat the descriptions on this page as a guide to the *enacted* framework, not a statement that every provision binds today. The skills run **live in-force checks** at analysis time — via the `uk-legislation` MCP server's `check_in_force` and `check_amendments` tools against legislation.gov.uk — and classify each finding as current, transitional, or prospective. See [Jurisdiction & legal currency](/concepts/jurisdiction).
+:::
+
 ---
 
 ## Employment Law
@@ -22,12 +26,14 @@ All legislation listed here applies to **England & Wales** only. Scottish and No
 ### Key Provisions
 
 ::: info ERA 2025
-The Employment Rights Act 2025 significantly reformed UK employment law. Key changes include:
+The Employment Rights Act 2025 is the most substantial reshaping of UK employment law in a generation, but its provisions **commence in phases** — several are not yet binding and depend on commencement regulations. The skill checks what is actually in force at analysis time. Headline measures, *as and when each commences*, include:
 - **Day-one unfair dismissal** protection (removal of the 2-year qualifying period)
 - **Guaranteed hours** for zero-hours workers
 - **Statutory flexible working** from day one
 - Strengthened family leave entitlements
 - Enhanced whistleblowing protections
+
+Until a given provision commences, the prior position under the **Employment Rights Act 1996** continues to apply — the skill labels each finding current, transitional, or prospective accordingly.
 :::
 
 **Equality Act 2010** protects 9 characteristics: age, disability, gender reassignment, marriage/civil partnership, pregnancy/maternity, race, religion/belief, sex, and sexual orientation. Covers direct discrimination, indirect discrimination, harassment, and victimisation.
@@ -50,7 +56,7 @@ The Employment Rights Act 2025 significantly reformed UK employment law. Key cha
 ### Key Provisions
 
 **UK GDPR** retained the EU GDPR framework post-Brexit with modifications:
-- Lawful bases for processing (Article 6), including the new "recognised legitimate interest" ground introduced by DUAA 2025
+- Lawful bases for processing (Article 6), including the "recognised legitimate interest" ground introduced by DUAA 2025 (in force as its provisions commence — the skill checks the live position)
 - Data subject rights (Articles 15-22): access, rectification, erasure, portability, objection
 - Controller-processor obligations (Articles 28-29)
 - Data Protection Impact Assessments (Article 35)
@@ -61,7 +67,7 @@ The Employment Rights Act 2025 significantly reformed UK employment law. Key cha
 **PECR 2003** governs electronic marketing (email, SMS, calls) and cookie consent. Penalties have been aligned with UK GDPR levels (up to GBP 17.5 million or 4% of annual global turnover).
 
 ::: tip
-The Data (Use and Access) Act 2025 introduced "recognised legitimate interests" as a new lawful basis under Article 6, smart data schemes, digital verification services, and reforms to automated decision-making provisions.
+The Data (Use and Access) Act 2025 introduces "recognised legitimate interests" as a lawful basis under Article 6, smart data schemes, digital verification services, and reforms to automated decision-making provisions. These changes **commence on dates set by regulations** rather than all at once, so the skill verifies what is actually in force (via the `uk-legislation` MCP server) before treating any DUAA reform as binding.
 :::
 
 ---
@@ -140,13 +146,13 @@ The Digital Markets, Competition and Consumers Act 2024 is the most significant 
 ### Key Provisions
 
 ::: info Renters' Rights Act 2025
-The RRA 2025 introduced major reforms to the private rented sector:
-- **Section 21 abolition**: No more "no-fault" evictions
-- **Periodic tenancies**: All tenancies become assured periodic tenancies
-- **Rent increase limits**: Landlords can only increase rent once per year via statutory mechanism
-- **Pet rights**: Landlords cannot unreasonably refuse pet requests
-- **Decent Homes Standard**: Extended to the private rented sector
-- **PRS Database**: Mandatory registration for private landlords
+The RRA 2025 received Royal Assent on **27 October 2025** and brings major reforms to the private rented sector — but they **commence in phases**, not on Royal Assent. GOV.UK's implementation roadmap puts the first major phase at **1 May 2026**. The skill checks the live commencement position and flags each finding as current, transitional, or prospective:
+- **Section 21 abolition** (commencing in phases from 2026): the "no-fault" eviction route is removed from its operative date — verify whether a given tenancy and notice fall before or after commencement before treating abolition as operative
+- **Periodic tenancies**: assured shorthold and fixed-term tenancies convert to assured periodic tenancies as the relevant provisions commence
+- **Rent increase limits**: rent increases move to the statutory s.13 mechanism (once per year) on commencement
+- **Pet rights**: landlords cannot unreasonably refuse pet requests, as those provisions commence
+- **Decent Homes Standard**: extended to the private rented sector via secondary legislation expected to follow
+- **PRS Database**: mandatory landlord registration, switched on by commencement regulations
 :::
 
 **Tenant Fees Act 2019** prohibits most tenant fees:

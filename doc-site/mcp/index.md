@@ -4,7 +4,7 @@ When you ask UK Legal Skills to check whether a law has been amended or is still
 
 Think of MCP like giving the AI a library card. Without it, the AI can only tell you what it learned during training (which might be months out of date). With MCP, the AI can walk into the library (legislation.gov.uk and a database of 63,000 court cases) and check the actual current state of the law.
 
-This matters because laws change constantly. The Renters' Rights Act 2025 abolished Section 21 evictions. The Data (Use and Access) Act 2025 changed GDPR rules. If your AI doesn't know about these changes, it gives you wrong advice. MCP prevents that.
+This matters because laws change constantly — and reforms are usually passed long before they take effect. The Renters' Rights Act 2025 *will* abolish Section 21 evictions, phased in from 2026; the Data (Use and Access) Act 2025 amends UK data-protection law as its provisions commence. Whether a change is actually *in force yet* is exactly what these servers check — so the analysis reflects the law in force today, not a reform that has not yet commenced.
 
 ![MCP concept (broadsheet rebrand) — three live sources of UK law](/images/mcp-concept-2026.jpg)
 
@@ -38,16 +38,17 @@ MCP bridges the gap between the AI's training cutoff and the current state of UK
 
 ## How UK Legal Skills Uses MCP
 
-UK Legal Skills connects to **two MCP servers** that provide complementary coverage:
+UK Legal Skills connects to **three MCP servers** that provide complementary coverage:
 
 | Server | Type | Source | Coverage |
 |--------|------|--------|----------|
 | [uk-legislation](/mcp/uk-legislation) | Local | legislation.gov.uk | All UK statutes and SIs |
+| [caselaw](/mcp/caselaw) | Local | caselaw.nationalarchives.gov.uk | Find Case Law — search, lookup, summarise judgments |
 | [lex](/mcp/lex-server) | Remote | lex.lab.i.ai.gov.uk | 63,000+ court cases + semantic search |
 
 ### Configuration
 
-Both servers are registered in `.mcp.json` at the project root:
+All three servers are registered in `.mcp.json` at the project root:
 
 ```json
 {
@@ -55,6 +56,10 @@ Both servers are registered in `.mcp.json` at the project root:
     "uk-legislation": {
       "command": "npx",
       "args": ["tsx", "mcp-servers/uk-legislation/src/index.ts"]
+    },
+    "caselaw": {
+      "command": "npx",
+      "args": ["tsx", "mcp-servers/caselaw/src/index.ts"]
     },
     "lex": {
       "type": "http",
@@ -64,7 +69,7 @@ Both servers are registered in `.mcp.json` at the project root:
 }
 ```
 
-- The **uk-legislation** server runs locally as a stdio process
+- The **uk-legislation** and **caselaw** servers run locally as stdio processes
 - The **lex** server is a remote HTTP endpoint -- no local setup required
 
 ### How Skills Use MCP
@@ -74,7 +79,7 @@ Skills reference MCP tools by name in their prompts. For example, the Legislatio
 The skill itself does not contain code -- it is a Markdown prompt that instructs the active agent host to use the available MCP tools when it needs live data.
 
 ::: tip No Extra Setup for CLI Users
-If you installed UK Legal Skills via `install.sh`, the MCP configuration is already in place. The `uk-legislation` server starts automatically when Claude Code needs it. The remote `lex` server requires no local installation.
+If you installed UK Legal Skills via `install.sh`, the MCP configuration is already in place. The `uk-legislation` and `caselaw` servers start automatically when Claude Code needs them. The remote `lex` server requires no local installation.
 :::
 
 ## When MCP Is Used

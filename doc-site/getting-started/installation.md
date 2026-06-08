@@ -65,7 +65,7 @@ After installing, open your agent host and type `/legal`. You should see the ful
 
 ## MCP server setup
 
-Two MCP servers provide real-time legal data. `uk-legislation` looks up statutes against legislation.gov.uk; `caselaw` searches court judgments via the National Archives caselaw service. Both query public government APIs and need no API key. They require Node.js 18+.
+Three MCP servers provide real-time legal data. `uk-legislation` looks up statutes against legislation.gov.uk; `caselaw` searches court judgments via the National Archives Find Case Law service; and the remote `lex` server adds semantic search across 63,000+ judgments. The two local servers query public government APIs and need no API key. They require Node.js 18+.
 
 Build and run a server from its directory:
 

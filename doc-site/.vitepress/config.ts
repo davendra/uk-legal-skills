@@ -107,11 +107,13 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/cli/' },
             { text: 'Contract Analysis', link: '/cli/contract-analysis' },
+            { text: 'Case Law', link: '/cli/caselaw' },
             { text: 'Employment & IR35', link: '/cli/employment' },
             { text: 'Corporate & AML', link: '/cli/corporate' },
             { text: 'Property & Tenancy', link: '/cli/property' },
             { text: 'Compliance & GDPR', link: '/cli/compliance' },
             { text: 'Document Generation', link: '/cli/document-generation' },
+            { text: 'Business Intelligence', link: '/cli/business-intelligence' },
             { text: 'Specialist', link: '/cli/specialist' },
             { text: 'Utilities', link: '/cli/utilities' },
           ],
@@ -124,6 +126,7 @@ export default defineConfig({
           items: [
             { text: 'What is MCP?', link: '/mcp/' },
             { text: 'UK Legislation Server', link: '/mcp/uk-legislation' },
+            { text: 'Caselaw Server', link: '/mcp/caselaw' },
             { text: 'Lex Court Cases', link: '/mcp/lex-server' },
           ],
         },
@@ -170,8 +173,10 @@ export default defineConfig({
           text: 'Reference',
           items: [
             { text: 'All Commands', link: '/reference/all-commands' },
+            { text: 'Example Output', link: '/reference/sample-report' },
             { text: 'UK Legislation', link: '/reference/legislation' },
             { text: 'File Naming', link: '/reference/file-naming' },
+            { text: 'FAQ', link: '/reference/faq' },
           ],
         },
       ],

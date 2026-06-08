@@ -4,13 +4,9 @@ These are the commands you can run inside Claude Code, Codex, or another compati
 
 UK Legal Skills provides **38 commands** that run inside any compatible agent host as skills. Every command is invoked with the `/legal` prefix.
 
-![The instrument (broadsheet rebrand) — 38 skills across 10 parts](/images/skill-categories-2026.jpg)
+![The instrument — 38 skills across 11 categories](/images/skill-categories-2026.jpg)
 
-*Plate I — the broadsheet rebrand.*
-
-![38 skills across 10 legal categories](/images/skill-categories.jpg)
-
-*Plate I.a — the original, kept for reference.*
+*Plate I — the instrument: thirty-eight skills across eleven categories.*
 
 ## Which Command Do I Need?
 
@@ -30,14 +26,17 @@ Not sure where to start? Find your situation below:
 | Check a property lease | `/legal property` |
 | Recover a debt | `/legal debt` |
 | Check employment law compliance | `/legal employment` |
+| Get a fast SIGN / NEGOTIATE / WALK verdict | `/legal first-read` |
+| Search UK case law or find a judgment | `/legal caselaw` |
+| Vet a product or feature before it ships | `/legal pre-launch` |
+| Brief a partner on the state of a matter | `/legal matter-brief` |
+| Draft board minutes and resolutions | `/legal board-pack` |
+| Check ESG / modern slavery compliance | `/legal esg` |
+| Review an IP licence or assignment | `/legal ip` |
 
-![CLI workflow (broadsheet rebrand) — install, invoke, ingest, analyse, deliver](/images/cli-workflow-2026.jpg)
+![CLI workflow — install, invoke, ingest, analyse, deliver](/images/cli-workflow-2026.jpg)
 
-*Plate I — the broadsheet rebrand.*
-
-![CLI workflow — three input methods converge into AI analysis](/images/cli-workflow.jpg)
-
-*Plate I.a — the original, kept for reference.*
+*Plate II — install, invoke, ingest, analyse, deliver.*
 
 ## How it works
 
@@ -83,23 +82,78 @@ All commands use a standardised risk-level system:
 | :yellow_circle: | Medium Risk |
 | :green_circle: | Low Risk |
 
-## Command categories
+## Browse all 38 commands by category
 
-| Category | Commands | Page |
-|----------|----------|------|
-| [Contract Analysis](./contract-analysis) | 7 commands | Full review, risks, compare, plain English, negotiate, missing protections, benchmarking |
-| [Employment](./employment) | 3 commands | Employment review, IR35 determination, freelancer review |
-| [Corporate](./corporate) | 3 commands | Corporate review, AML/KYC, immigration compliance |
-| [Property](./property) | 2 commands | Property analysis, tenancy agreement review |
-| [Compliance & Reporting](./compliance) | 7 commands | Compliance audit, GDPR, consumer, ESG, AI compliance, legislation tracker, regulatory calendar |
-| [Document Generation](./document-generation) | 5 commands | NDA, terms of service, privacy policy, agreements, board packs |
-| [Specialist](./specialist) | 5 commands | Dispute resolution, due diligence, IP, debt recovery, wills & probate |
-| [Utilities](./utilities) | 2 commands | PDF report generation, sample document fetcher |
+Every command, grouped by its register category. Each links to its full walkthrough.
+
+**Case Law** (1)
+- [/legal caselaw](/cli/caselaw) — Case Law Search
+
+**Contract Analysis** (7)
+- [/legal first-read](/cli/contract-analysis) — First Read (triage)
+- [/legal review](/cli/contract-analysis) — Contract Review
+- [/legal risks](/cli/contract-analysis) — Risk Analysis
+- [/legal compare](/cli/contract-analysis) — Contract Compare
+- [/legal negotiate](/cli/contract-analysis) — Negotiate
+- [/legal missing](/cli/contract-analysis) — Missing Protections
+- [/legal plain](/cli/contract-analysis) — Plain English
+
+**Property Law** (1)
+- [/legal property](/cli/property) — Property Law
+
+**Document Generation** (5)
+- [/legal nda](/cli/document-generation) — NDA Generator
+- [/legal terms](/cli/document-generation) — Terms of Service
+- [/legal privacy](/cli/document-generation) — Privacy Policy
+- [/legal agreement](/cli/document-generation) — Agreement Generator
+- [/legal freelancer](/cli/employment) — Freelancer Review
+
+**Compliance & Reporting** (4)
+- [/legal compliance](/cli/compliance) — Compliance Audit
+- [/legal legislation-tracker](/cli/compliance) — Legislation Tracker
+- [/legal pre-launch](/cli/compliance) — Pre-Launch Counsel
+- [/legal report-pdf](/cli/utilities) — PDF Report
+
+**Employment & Corporate** (4)
+- [/legal employment](/cli/employment) — Employment Review
+- [/legal ir35](/cli/employment) — IR35 Assessment
+- [/legal corporate](/cli/corporate) — Corporate Review
+- [/legal aml](/cli/corporate) — AML Compliance
+
+**Consumer & ESG** (3)
+- [/legal consumer](/cli/compliance) — Consumer Compliance
+- [/legal esg](/cli/compliance) — ESG Compliance
+- [/legal dispute](/cli/specialist) — Dispute Resolution
+
+**Platform Tools** (1)
+- [/legal ai-compliance](/cli/compliance) — AI Compliance
+
+**Specialist** (6)
+- [/legal gdpr](/cli/compliance) — GDPR Deep-Dive
+- [/legal tenancy](/cli/property) — Tenancy Review
+- [/legal ip](/cli/specialist) — IP Review
+- [/legal debt](/cli/specialist) — Debt Recovery
+- [/legal immigration](/cli/corporate) — Immigration Compliance
+- [/legal wills](/cli/specialist) — Wills & Probate
+
+**Business Intelligence** (5)
+- [/legal benchmark](/cli/contract-analysis) — Benchmark
+- [/legal due-diligence](/cli/specialist) — Due Diligence
+- [/legal board-pack](/cli/document-generation) — Board Pack
+- [/legal regulatory-calendar](/cli/compliance) — Regulatory Calendar
+- [/legal matter-brief](/cli/business-intelligence) — Matter Brief
+
+**Utility** (1)
+- [/legal fetch-samples](/cli/utilities) — Fetch Samples
 
 ## Quick reference
 
 ```
+CASE LAW:
+  /legal caselaw <query>          Search 63,000+ UK court judgments
+
 CONTRACT ANALYSIS:
+  /legal first-read <file>        Senior Counsel triage — SIGN / NEGOTIATE / WALK
   /legal review <file>            Full contract review (5 parallel agents)
   /legal risks <file>             Deep risk analysis with severity scoring
   /legal compare <file1> <file2>  Side-by-side contract comparison
@@ -135,7 +189,11 @@ COMPLIANCE & REPORTING:
   /legal ai-compliance <file>     AI compliance self-assessment
   /legal legislation-tracker <file>  Legislation currency audit
   /legal regulatory-calendar      12-month regulatory filing calendar
+  /legal pre-launch <product>     Pre-Launch Counsel — UK regulatory gate before shipping
   /legal report-pdf               Professional PDF report
+
+MATTER MANAGEMENT:
+  /legal matter-brief <matter>    State-of-the-matter brief — risks, deadlines, next move
 
 SPECIALIST:
   /legal dispute <file>           Dispute resolution analysis

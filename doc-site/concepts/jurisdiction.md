@@ -12,6 +12,10 @@ Never add references to Scottish statutes (e.g., Land Registration (Scotland) Ac
 
 ## Key Legislation by Category
 
+::: warning 2025 reforms commence in phases
+The 2025 Acts in the tables below — the **Employment Rights Act 2025**, the **Renters' Rights Act 2025** (first major phase from 1 May 2026 per GOV.UK's roadmap), and the **Data (Use and Access) Act 2025** — are enacted but commence in phases, so not every provision binds today. The skills run live in-force checks via the `uk-legislation` MCP server (`check_in_force`, `check_amendments`) at analysis time and label each finding current, transitional, or prospective. See the [legislation reference](/reference/legislation) for the per-Act detail.
+:::
+
 ### Employment
 
 | Act | Key Provisions |

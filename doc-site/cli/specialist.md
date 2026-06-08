@@ -493,3 +493,11 @@ The analysis assesses claim risk from potential applicants:
 `WILL-REVIEW-[testator]-[YYYY-MM-DD].md`
 
 The report includes an overall validity score (0--100, grade A--F), execution compliance table (Wills Act 1837), estate distribution summary, IHT estimate with available reliefs and estimated liability, Inheritance Act 1975 claim risk assessment (high/medium/low with identified potential claimants and defensive measures), and prioritised recommendations with replacement language.
+
+---
+
+## Related commands
+
+- [/legal review](/cli/contract-analysis) — full contract review
+- [Business Intelligence](/cli/business-intelligence) — benchmarking, due diligence, matter briefs
+- [/legal compliance](/cli/compliance) — regulatory compliance audits

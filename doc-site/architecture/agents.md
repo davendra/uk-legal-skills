@@ -146,7 +146,7 @@ For example, a risk assessment agent might return:
 
 ## Single-Agent Skills
 
-The remaining 35 skills (out of 38 total) are **single-agent or utility skills** -- they run the full analysis in one pass without launching sub-agents, or perform a bounded utility action such as sample fetching. These skills handle the complete lifecycle from ingestion through scoring to report generation within a single SKILL.md file.
+The remaining 35 single-agent and utility skills -- the rest of the 38 -- run the full analysis in one pass without launching sub-agents, or perform a bounded utility action such as sample fetching. These skills handle the complete lifecycle from ingestion through scoring to report generation within a single SKILL.md file.
 
 Single-agent skills include: `legal-risks`, `legal-compare`, `legal-plain`, `legal-negotiate`, `legal-missing`, `legal-benchmark`, `legal-ir35`, `legal-nda`, `legal-terms`, `legal-privacy`, `legal-agreement`, `legal-compliance`, `legal-gdpr`, `legal-consumer`, `legal-esg`, and others.
 

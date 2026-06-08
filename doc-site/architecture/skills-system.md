@@ -12,7 +12,7 @@ Every skill lives in its own directory under `skills/`. The full register is **3
 
 ```mermaid
 flowchart TB
-  REG["<strong>skill-registry.json</strong><br/>38 skills · 12 agents · 10 categories"]
+  REG["<strong>skill-registry.json</strong><br/>38 skills · 12 agents · 11 categories"]
   N["I · legal/SKILL.md (CLI router)"]
   S["II · doc-site (public docs, auto-generated)"]
   W["III · scripts/audit_skills.mjs (parity guardrail)"]

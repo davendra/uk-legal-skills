@@ -267,3 +267,12 @@ Generates Companies Act 2006 compliant board meeting documents.
 ### Key legislation
 
 Companies Act 2006 (ss.248, 281--283, 288--300, 167, 177, 549--551, 561, 830).
+
+---
+
+## Related commands
+
+- [/legal review](/cli/contract-analysis) — review a generated or third-party draft
+- [/legal freelancer](/cli/employment) — contractor-side review of an agreement
+- [/legal compliance](/cli/compliance) — check a generated policy against UK GDPR / PECR
+- [Example output](/reference/sample-report) — what a review report looks like

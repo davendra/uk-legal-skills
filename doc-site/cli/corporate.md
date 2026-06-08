@@ -158,3 +158,12 @@ Immigration and visa compliance review for employers and sponsors.
 ### Key legislation
 
 Immigration Rules HC 395, Immigration, Asylum and Nationality Act 2006 (s.15 civil penalties), Immigration Act 2014/2016 (Right to Work), Points-Based System guidance.
+
+---
+
+## Related commands
+
+- [/legal review](/cli/contract-analysis) — full clause-by-clause contract review
+- [/legal due-diligence](/cli/specialist) — M&A due-diligence checklist
+- [/legal board-pack](/cli/document-generation) — Companies Act board documents
+- [UK legislation reference](/reference/legislation) — the statutes these checks rely on

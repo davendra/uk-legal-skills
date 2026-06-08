@@ -14,7 +14,7 @@ Three commands for employment contracts, IR35 determinations, and freelancer con
 
 ## /legal employment
 
-**Why use this?** You are hiring someone, or you have been offered a job, and you want to make sure the contract is legally compliant and fair. This is especially important since the Employment Rights Act 2025 introduced day-one unfair dismissal rights and other major changes.
+**Why use this?** You are hiring someone, or you have been offered a job, and you want to make sure the contract is legally compliant and fair. This is especially important given the Employment Rights Act 2025, which introduces day-one unfair dismissal rights and other major reforms as its provisions are commenced — the skill checks what is actually in force before relying on any reform.
 
 Launches **4 parallel agents** to produce a comprehensive employment document review with an ERA 2025 compliance dashboard.
 
@@ -211,3 +211,12 @@ Unlimited revisions, no kill fee, overly broad non-compete, blanket IP assignmen
 ### Key legislation
 
 ITEPA 2003 (IR35), ERA 1996 (employment status), CDPA 1988 (copyright ownership).
+
+---
+
+## Related commands
+
+- [/legal corporate](/cli/corporate) — director duties and corporate governance
+- [/legal review](/cli/contract-analysis) — general contract review
+- [/legal compliance](/cli/compliance) — Equality Act and data-protection compliance
+- [UK legislation reference](/reference/legislation) — ERA 2025 and related statutes

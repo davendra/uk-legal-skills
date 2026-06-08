@@ -77,7 +77,7 @@ Two TypeScript MCP servers ship with the repo, plus one remote HTTP server. All 
 | Entry | Type | Source | Purpose |
 |-------|------|--------|---------|
 | `uk-legislation` | local stdio | `mcp-servers/uk-legislation/` | 6 tools against legislation.gov.uk's XML API — search, lookup, in-force, amendments, extent |
-| `caselaw` | local stdio | `mcp-servers/caselaw/` | 10 tools against caselaw.nationalarchives.gov.uk — search, judgment lookup, summarise, by-judge / by-party |
+| `caselaw` | local stdio | `mcp-servers/caselaw/` | 9 tools against caselaw.nationalarchives.gov.uk — search, judgment lookup, summarise, by-judge / by-party |
 | `lex` | remote HTTP | `https://lex.lab.i.ai.gov.uk/mcp` | 63,000+ judgments with semantic search via the National Archives Lex Graph |
 
 ### Scripts (`scripts/`)

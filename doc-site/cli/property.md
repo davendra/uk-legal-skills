@@ -107,3 +107,11 @@ Tenancy agreement review with full Renters' Rights Act 2025 compliance assessmen
 ### Key legislation
 
 Renters' Rights Act 2025 (commencing May 2026), Housing Act 1988, Housing Act 2004, Tenant Fees Act 2019, Deregulation Act 2015, Gas Safety (Installation and Use) Regulations 1998, Electrical Safety Standards in the Private Rented Sector (England) Regulations 2020, Energy Performance of Buildings (England and Wales) Regulations 2012, Smoke and Carbon Monoxide Alarm (Amendment) Regulations 2022.
+
+---
+
+## Related commands
+
+- [/legal review](/cli/contract-analysis) — general contract review
+- [/legal compliance](/cli/compliance) — data-protection and consumer compliance
+- [UK legislation reference](/reference/legislation) — Housing Act 1988, Renters' Rights Act 2025
