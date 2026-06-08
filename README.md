@@ -1,144 +1,72 @@
-<div align="center">
+<p align="center">
+  <img src="doc-site/public/images/hero-2026.jpg" alt="The Counsel — a junior counsel in your pocket, England & Wales" width="820">
+</p>
 
-# ⚖️ UK Legal Skills
+<h1 align="center">UK Legal Skills</h1>
 
-### A junior counsel in your terminal — for England & Wales law.
+<p align="center">
+  <em>A junior counsel in your pocket.</em><br>
+  Thirty-eight legal skills, twelve agents, and the entirety of England &amp; Wales statute and case law — assembled into a single quiet assistant for <a href="https://claude.com/claude-code">Claude Code</a>, run as <code>/legal</code> commands.
+</p>
 
-**38 legal skills · 12 agents · live access to the entirety of England & Wales statute and case law — installed straight into [Claude Code](https://claude.com/claude-code) as `/legal` commands.**
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/davendra/uk-legal-skills?style=flat-square&color=8b1f1f&labelColor=1a1410" alt="MIT License"></a>
+  <a href="registry/skill-registry.json"><img src="https://img.shields.io/badge/skills-38-8b1f1f?style=flat-square&labelColor=1a1410" alt="38 skills"></a>
+  <a href="agents/"><img src="https://img.shields.io/badge/agents-12-8b1f1f?style=flat-square&labelColor=1a1410" alt="12 agents"></a>
+  <a href=".mcp.json"><img src="https://img.shields.io/badge/MCP%20servers-3-8b1f1f?style=flat-square&labelColor=1a1410" alt="3 MCP servers"></a>
+  <a href="#-jurisdiction--legal-currency"><img src="https://img.shields.io/badge/jurisdiction-England%20%26%20Wales-3d6a4a?style=flat-square&labelColor=1a1410" alt="England & Wales"></a>
+  <a href="https://ailegal.the-counsel.co.uk"><img src="https://img.shields.io/badge/docs-ailegal.the--counsel.co.uk-c79a4a?style=flat-square&labelColor=1a1410" alt="Documentation"></a>
+  <a href="https://claude.com/claude-code"><img src="https://img.shields.io/badge/made%20for-Claude%20Code-d97757?style=flat-square&labelColor=1a1410" alt="Made for Claude Code"></a>
+</p>
 
-[![License: MIT](https://img.shields.io/github/license/davendra/uk-legal-skills?color=8b1f1f)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-38-8b1f1f)](registry/skill-registry.json)
-[![Agents](https://img.shields.io/badge/agents-12-8b1f1f)](agents/)
-[![MCP servers](https://img.shields.io/badge/MCP%20servers-3-8b1f1f)](.mcp.json)
-[![Jurisdiction](https://img.shields.io/badge/jurisdiction-England%20%26%20Wales-006633)](#-jurisdiction--legal-currency)
-[![Made for Claude Code](https://img.shields.io/badge/made%20for-Claude%20Code-d97757)](https://claude.com/claude-code)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
-[![Last commit](https://img.shields.io/github/last-commit/davendra/uk-legal-skills)](https://github.com/davendra/uk-legal-skills/commits/main)
-[![Repo size](https://img.shields.io/github/repo-size/davendra/uk-legal-skills)](https://github.com/davendra/uk-legal-skills)
-[![Stars](https://img.shields.io/github/stars/davendra/uk-legal-skills?style=social)](https://github.com/davendra/uk-legal-skills/stargazers)
-
-</div>
+<p align="center">
+  <a href="https://ailegal.the-counsel.co.uk"><b>📖 Documentation</b></a> ·
+  <a href="#-quick-start"><b>⚡ Quick start</b></a> ·
+  <a href="#-the-38-commands"><b>🧭 Commands</b></a> ·
+  <a href="https://the-counsel.co.uk"><b>🌐 Hosted version</b></a>
+</p>
 
 > [!WARNING]
 > **Not legal advice.** Everything here is AI-generated legal *analysis* and *drafting*, intended as a starting point. It is **not** a substitute for a qualified solicitor, and it covers **England & Wales only**. Always have a solicitor review before you sign a contract or rely on a generated document.
 
 ---
 
-## 📑 Table of Contents
+## The principle
 
-- [Why this exists](#-why-this-exists)
-- [At a glance](#-at-a-glance)
-- [System architecture](#-system-architecture)
+> *In the matter of any contract before you, the question is rarely* **what does the document say**. *It is what the document* **does** — *to your money, your obligations, and the next twenty years of your professional life.*
+
+**Specialist before general. Fact before form.** UK Legal Skills is built around how solicitors actually reason — not how chatbots usually answer. Each skill is grounded in a specific corner of England & Wales law, with the precise statute in the margin and a live check that the law it relies on is the law in force *this morning*.
+
+---
+
+## 📑 Contents
+
 - [Quick start](#-quick-start)
+- [The first read](#-the-first-read)
 - [The 38 commands](#-the-38-commands)
-- [Orchestrators & agents](#-orchestrators--agents)
-- [How a review flows](#-how-a-review-flows)
-- [Business flows & who it's for](#-business-flows--who-its-for)
-- [Live UK legal data (MCP)](#-live-uk-legal-data-mcp)
+- [The panel — orchestrators & agents](#-the-panel--orchestrators--agents)
+- [System architecture](#-system-architecture)
 - [Jurisdiction & legal currency](#-jurisdiction--legal-currency)
-- [Escalation triggers](#-escalation-triggers)
+- [Live UK legal data (MCP)](#-live-uk-legal-data-mcp)
+- [Risk scoring](#-risk-scoring)
+- [Who it's for](#-who-its-for)
 - [How it works](#-how-it-works)
 - [Repository layout](#-repository-layout)
 - [Development & tests](#-development--tests)
-- [Examples](#-examples)
 - [Hosted version — The Counsel](#-hosted-version--the-counsel)
 - [FAQ](#-faq)
 - [Contributing](#-contributing)
 - [Data sources & licences](#-data-sources--licences)
-- [Disclaimer](#-disclaimer)
-- [License](#-license)
-
----
-
-## 💡 Why this exists
-
-Legal review is slow, expensive, and gated behind specialists — yet most of the work on an everyday contract is *triage*: spotting the dangerous clause, the missing protection, the out-of-date statute, the unfair term. **UK Legal Skills turns that triage into a single terminal command.**
-
-- 🧑‍⚖️ **Grounded in current law** — every commencement-sensitive skill checks whether a post-2024 reform is *actually in force* before relying on it, using live legislation and case-law tools.
-- 🧩 **No runtime, no lock-in** — each skill is a self-contained Markdown prompt. Read it, fork it, audit it. There's no SDK and no API key baked in.
-- 🌍 **England & Wales, properly scoped** — not a generic "world law" bot. Housing Act 1988, ERA 2025, ECCTA 2023, UK GDPR, CRA 2015, IR35 — the real statutes, with the real section numbers.
-- 🤖 **Multi-agent where it matters** — the flagship contract review fans out to five specialist agents and aggregates a weighted Safety Score.
-
----
-
-## 🏛️ At a glance
-
-<div align="center">
-
-| | | |
-|:--:|:--:|:--:|
-| **38** | **12** | **3** |
-| `/legal` skills | specialist agents | MCP data servers |
-| **11** | **63,000+** | **0** |
-| skill categories | searchable judgments | API keys required for `/legal` |
-
-</div>
-
-```mermaid
-mindmap
-  root(("/legal"))
-    Contract Analysis
-    Property
-    Document Generation
-    Employment and Corporate
-    Compliance and Reporting
-    Consumer and ESG
-    Specialist
-    Business Intelligence
-    Platform Tools
-    Case Law
-    Utility
-```
-
----
-
-## 🗺️ System architecture
-
-```mermaid
-flowchart TB
-    U["⚖️ You — a contract, a question, a document"]
-
-    subgraph HOST["Agent host · Claude Code"]
-        R["/legal router<br/>legal/SKILL.md"]
-        subgraph SK["38 skills · skills/legal-*"]
-            S1["Direct skills<br/>nda · gdpr · ip · tenancy · …"]
-            ORC["3 orchestrators<br/>review · employment · corporate"]
-        end
-        AG["12 specialist agents<br/>agents/legal-*"]
-    end
-
-    subgraph MCP["MCP servers · live UK law"]
-        L["uk-legislation"]
-        C["caselaw"]
-        X["lex · remote semantic search"]
-    end
-
-    subgraph DATA["Official UK sources"]
-        LG["legislation.gov.uk<br/>Open Government Licence"]
-        NA["caselaw.nationalarchives.gov.uk<br/>Open Justice Licence"]
-    end
-
-    OUT["📄 Report · Safety Score · redlines · PDF<br/>always prefixed with the disclaimer"]
-
-    U --> R --> SK
-    ORC -->|fan out| AG
-    SK -.->|in-force &amp; case lookups| MCP
-    AG -.-> MCP
-    L --> LG
-    C --> NA
-    X --> NA
-    SK --> OUT
-    AG --> OUT
-```
+- [Licence](#-licence)
 
 ---
 
 ## ⚡ Quick start
 
-You need [Claude Code](https://docs.claude.com/en/docs/claude-code). Then install the skills into `~/.claude/`:
+You need [Claude Code](https://docs.claude.com/en/docs/claude-code). Install the skills into `~/.claude/`:
 
 ```bash
-# One-liner (clones this repo and installs)
+# One-liner — clones this repo and installs
 curl -fsSL https://raw.githubusercontent.com/davendra/uk-legal-skills/main/install.sh | bash
 ```
 
@@ -150,40 +78,63 @@ cd uk-legal-skills
 ./install.sh
 ```
 
-```mermaid
-flowchart LR
-    A["git clone<br/>or curl │ bash"] --> B["./install.sh"]
-    B --> C["~/.claude/skills/legal<br/>+ 38 skills/legal-*"]
-    B --> D["~/.claude/agents<br/>12 legal-* agents"]
-    B --> E["PDF scripts<br/>+ template"]
-    C & D & E --> F["restart Claude Code"]
-    F --> G["/legal — 38 commands live"]
-```
-
-Then, inside Claude Code:
+`install.sh` copies the `/legal` router, all **38 skills**, **12 agents**, the PDF/ingestion scripts, and the contract template into `~/.claude/`. Restart Claude Code, then:
 
 ```
-/legal                       # show the full command menu
+/legal                       # the full command menu
 /legal first-read nda.pdf    # 15-second triage: SIGN / NEGOTIATE / WALK
 /legal review lease.docx     # full 5-agent review with a Safety Score
 /legal caselaw "unfair dismissal whistleblowing"
 ```
 
-Input is always one of three shapes: a **file path**, **pasted text**, or a **URL**. Remove everything with `./uninstall.sh`.
+Input is always one of three shapes — a **file path**, **pasted text**, or a **URL**. Remove everything with `./uninstall.sh`.
+
+<p align="center">
+  <img src="doc-site/public/images/cli-workflow-2026.jpg" alt="CLI workflow — install, invoke, ingest, analyse, deliver" width="820">
+  <br><sub><em>Plate I — install, invoke, ingest, analyse, deliver.</em></sub>
+</p>
+
+---
+
+## ⚖️ The first read
+
+Most everyday legal work is *triage*: spotting the dangerous clause, the missing protection, the out-of-date statute. `/legal first-read` gives a Senior Counsel verdict in under fifteen seconds — **SIGN**, **NEGOTIATE**, or **WALK** — on a likelihood × severity matrix, then routes anything red to the deep five-agent review.
+
+<p align="center">
+  <img src="doc-site/public/images/first-read-2026.jpg" alt="The first read — SIGN, NEGOTIATE or WALK in under fifteen seconds" width="820">
+  <br><sub><em>Plate II — the first read: a verdict before the deep review.</em></sub>
+</p>
+
+```mermaid
+%% kept as a quick text map; the plate above is the canonical view
+flowchart LR
+    D["📄 A contract arrives"] --> FR["/legal first-read"]
+    FR --> Q{"verdict"}
+    Q -->|🟢 SIGN| S["proceed, keep the record"]
+    Q -->|🟡 NEGOTIATE| N["/legal review → /legal negotiate"]
+    Q -->|🔴 WALK| W["instruct a solicitor"]
+```
 
 ---
 
 ## 🧭 The 38 commands
 
+Thirty-eight specialists, each one fluent in a single corner of England & Wales law. Invoke any with the `/legal` prefix.
+
+<p align="center">
+  <img src="doc-site/public/images/skill-categories-2026.jpg" alt="The instrument — 38 skills, by category" width="820">
+  <br><sub><em>Plate III — the instrument: thirty-eight skills, grouped by field.</em></sub>
+</p>
+
 | Command | What it does |
 |---------|--------------|
 | **🔎 Case Law** | |
-| `/legal caselaw <query>` | Search 63,000+ UK judgments from Find Case Law by keyword, party, judge, statute section, or citation |
+| `/legal caselaw <query>` | Search 63,000+ UK judgments from Find Case Law (National Archives) by keyword, party, judge, statute section, or citation |
 | **📃 Contract Analysis** | |
-| `/legal first-read <file>` | Senior Counsel triage — a fast SIGN / NEGOTIATE / WALK verdict with a severity × likelihood matrix |
+| `/legal first-read <file>` | Senior Counsel triage — a fast (<15s) SIGN / NEGOTIATE / WALK verdict with a severity × likelihood matrix |
 | `/legal review <file>` | **Flagship** — 5 parallel agents → a 0–100 Contract Safety Score, clause-by-clause analysis, prioritised fixes |
 | `/legal risks <file>` | Deep risk scoring (1–10 per clause) with estimated GBP exposure and hidden-risk detection |
-| `/legal compare <f1> <f2>` | Side-by-side diff of two versions, flagging dangerous changes with favourability analysis |
+| `/legal compare <file1> <file2>` | Side-by-side diff of two versions, flagging dangerous changes with favourability analysis |
 | `/legal plain <file>` | Translate every clause from legalese into plain English, with a glossary |
 | `/legal negotiate <file>` | Counter-proposals with replacement language, talking points, and a ready-to-send email |
 | `/legal missing <file>` | Find protections that *should* be in the contract but aren't, with insert-ready clauses |
@@ -227,48 +178,23 @@ Input is always one of three shapes: a **file path**, **pasted text**, or a **UR
 | **🔧 Utility** | |
 | `/legal fetch-samples` | Find and catalogue public UK legal sample documents for testing |
 
-> The always-current, machine-readable catalogue is [`registry/skill-registry.json`](registry/skill-registry.json); it's rendered into [`doc-site/reference/all-commands.md`](doc-site/reference/all-commands.md) by `npm run docs:generate`.
+> The always-current, machine-readable catalogue is [`registry/skill-registry.json`](registry/skill-registry.json), rendered into the [full command reference](https://ailegal.the-counsel.co.uk/reference/all-commands).
 
 ---
 
-## 🤖 Orchestrators & agents
+## 🏛️ The panel — orchestrators & agents
 
-Most skills run solo. Three are **orchestrators** that fan out to parallel specialist agents and then aggregate a **weighted** score — so the final verdict is a blend of independent expert passes, not a single opinion.
+Most skills run solo. Three are **orchestrators** that fan out to parallel specialist agents and then aggregate a **weighted** score — so the verdict is a blend of independent expert passes, not a single opinion.
 
-### `/legal review` — the flagship (5 agents)
+<p align="center">
+  <img src="doc-site/public/images/orchestrator-2026.jpg" alt="The panel of five — /legal review, five agents, weighted aggregation" width="820">
+  <br><sub><em>Plate IV — the panel of five: <code>/legal review</code> aggregates to a Contract Safety Score.</em></sub>
+</p>
 
-```mermaid
-flowchart LR
-    IN["📄 Contract<br/>file · text · URL"] --> P1["Phase 1<br/>Ingest and classify"]
-    P1 --> FAN(("Phase 2<br/>fan out"))
-    FAN --> A1["legal-clauses<br/><b>20%</b>"]
-    FAN --> A2["legal-risks<br/><b>25%</b>"]
-    FAN --> A3["legal-compliance<br/><b>20%</b>"]
-    FAN --> A4["legal-terms<br/><b>15%</b>"]
-    FAN --> A5["legal-recommendations<br/><b>20%</b>"]
-    A1 --> AGG["Phase 3<br/>weighted aggregation"]
-    A2 --> AGG
-    A3 --> AGG
-    A4 --> AGG
-    A5 --> AGG
-    AGG --> SCORE["🛡️ Contract Safety Score<br/>0–100 + prioritised redlines"]
-```
-
-### `/legal employment` & `/legal corporate`
-
-```mermaid
-flowchart LR
-    subgraph EMP["/legal employment · 4 agents · equal weight"]
-        direction TB
-        E0["Employment document"] --> E1["contract"] & E2["rights"] & E3["discrimination"] & E4["obligations"]
-        E1 & E2 & E3 & E4 --> ESC["ERA 2025 compliance scorecard"]
-    end
-    subgraph CORP["/legal corporate · 3 agents · 35 / 35 / 30"]
-        direction TB
-        C0["Corporate document"] --> C1["compliance<br/>35%"] & C2["documents<br/>35%"] & C3["risk<br/>30%"]
-        C1 & C2 & C3 --> CSC["CA 2006 + ECCTA 2023 verdict"]
-    end
-```
+<p align="center">
+  <img src="doc-site/public/images/employment-agents-2026.jpg" alt="Employment review — four agents in parallel" width="640">
+  <br><sub><em>Plate V — <code>/legal employment</code>: four agents in parallel against ERA 2025.</em></sub>
+</p>
 
 | Orchestrator | Agents | Weights |
 |--------------|--------|---------|
@@ -276,71 +202,37 @@ flowchart LR
 | `/legal employment` | `legal-employment-contract`, `-rights`, `-discrimination`, `-obligations` | equal |
 | `/legal corporate` | `legal-corporate-compliance`, `-documents`, `-risk` | 35 / 35 / 30 |
 
-The remaining agents in [`agents/`](agents/) back individual skills. Change a subagent's output contract and you must update the aggregation step in its parent orchestrator — the parity guard (`npm run test:skills`) keeps the whole graph honest.
+The remaining agents in [`agents/`](agents/) back individual skills. Change a subagent's output contract and you must update its parent orchestrator — the parity guard (`npm run test:skills`) keeps the whole graph honest.
 
 ---
 
-## 🔄 How a review flows
+## 🗺️ System architecture
 
-```mermaid
-sequenceDiagram
-    actor You
-    participant Host as Claude Code
-    participant Skill as /legal review
-    participant Agents as 5 parallel agents
-    participant MCP as uk-legislation MCP
-    You->>Host: /legal review lease.docx
-    Host->>Skill: load skill prompt + document
-    Skill->>Skill: Phase 1 — classify the contract type
-    Skill->>Agents: Phase 2 — fan out (clauses · risks · compliance · terms · recs)
-    Agents->>MCP: check_in_force / lookup_section
-    MCP-->>Agents: current status of cited Acts
-    Agents-->>Skill: component scores + findings
-    Skill->>Skill: Phase 3 — weighted aggregation
-    Skill-->>Host: Safety Score + redlines + disclaimer
-    Host-->>You: 📄 report (Markdown / PDF)
 ```
+You → /legal router → 38 skills → (3 orchestrators fan out to 12 agents) → MCP servers → official UK sources → report
+```
+
+<p align="center">
+  <img src="doc-site/public/images/architecture-2026.jpg" alt="System architecture — one canon, live UK law" width="820">
+  <br><sub><em>Plate VI — the chambers: skills, agents, and live UK law, one canon.</em></sub>
+</p>
+
+Each skill is a **self-contained Markdown prompt** — no runtime, no SDK, no API key. The host agent reads the skill and runs it using its own capabilities (file reading, web fetch, subagents, MCP, PDF). That makes the skills portable, auditable, and easy to fork.
 
 ---
 
-## 🧑‍💼 Business flows & who it's for
+## ⚖️ Jurisdiction & legal currency
 
-`UK Legal Skills` collapses a multi-step legal workflow into a guided path. The triage skill routes you to the right depth:
+This suite is **England & Wales only**. Scots law and Northern Irish law are out of scope.
 
-```mermaid
-flowchart TD
-    D["📄 New contract lands on your desk"] --> FR["/legal first-read<br/>Senior Counsel triage &lt;15s"]
-    FR --> Q{"Likelihood × severity<br/>verdict?"}
-    Q -->|🟢 SIGN| SIGN["Low risk —<br/>proceed, keep the record"]
-    Q -->|🟡 NEGOTIATE| NEG["/legal review →<br/>/legal negotiate"]
-    Q -->|🔴 WALK| WALK["Material red flags —<br/>escalate to a solicitor"]
-    NEG --> REV["Deep 5-agent review +<br/>/legal missing + /legal benchmark"]
-    REV --> OUT["Redlined draft +<br/>client-ready PDF"]
-```
+Post-2024 reforms move fast, so commencement-aware skills (`employment`, `tenancy`, `gdpr`, `consumer`, `corporate`, `legislation-tracker`, `pre-launch`) run a **live in-force check** before treating any reform as binding — classifying every cited provision as current, transitional, prospective, repealed, or unknown.
 
-**A persona walk-through — a freelancer vetting a client contract:**
+<p align="center">
+  <img src="doc-site/public/images/commencement-2026.jpg" alt="Is the law in force? — commencement checked live on every analysis" width="820">
+  <br><sub><em>Plate VII — is the law in force? Commencement checked live via MCP, every analysis.</em></sub>
+</p>
 
-```mermaid
-journey
-    title Freelancer reviews a client contract before signing
-    section Triage
-      Paste contract into /legal first-read: 5: Freelancer
-      Read the SIGN / NEGOTIATE / WALK verdict: 5: Freelancer
-    section Deep review
-      Run /legal freelancer (IR35 + contractor traps): 4: Freelancer
-      Run /legal missing (what protection is absent): 4: Freelancer
-    section Act
-      /legal negotiate produces a counter email: 5: Freelancer
-      /legal report-pdf exports a client-ready PDF: 5: Freelancer
-```
-
-| Persona | Typical path |
-|---------|--------------|
-| 🧑‍💻 **Freelancer / contractor** | `first-read` → `freelancer` → `ir35` → `negotiate` |
-| 🚀 **Startup founder** | `terms` / `privacy` (generate) → `gdpr` → `pre-launch` (regulatory gate) |
-| 🏢 **In-house / ops** | `review` → `compliance` → `regulatory-calendar` → `board-pack` |
-| 🏠 **Renter / landlord** | `tenancy` / `property` (with Renters' Rights Act 2025 commencement checks) |
-| ⚖️ **Solicitor / paralegal** | `review` → `benchmark` → `due-diligence` → `caselaw` → `report-pdf` |
+Risk is always reported with standardised indicators: 🔴 **High** · 🟡 **Medium** · 🟢 **Low**.
 
 ---
 
@@ -348,19 +240,16 @@ journey
 
 Skills that need current law call three [Model Context Protocol](https://modelcontextprotocol.io) servers, registered in [`.mcp.json`](.mcp.json):
 
-```mermaid
-flowchart LR
-    SK["/legal skills &amp; agents"] --> L & C & X
-    L["uk-legislation<br/>(local · tsx)"] --> LG["legislation.gov.uk"]
-    C["caselaw<br/>(local · tsx)"] --> NA["caselaw.nationalarchives.gov.uk"]
-    X["lex<br/>(remote HTTP)"] --> SEM["63,000 judgments<br/>semantic search"]
-```
+<p align="center">
+  <img src="doc-site/public/images/mcp-concept-2026.jpg" alt="MCP — three live sources of UK law" width="760">
+  <br><sub><em>Plate VIII — three live sources of UK law.</em></sub>
+</p>
 
 | Server | Source | Tools |
 |--------|--------|-------|
 | `uk-legislation` | legislation.gov.uk (OGL v3.0) | `search_legislation`, `lookup_statute`, `lookup_section`, `check_in_force`, `check_amendments`, `get_extent` |
 | `caselaw` | caselaw.nationalarchives.gov.uk (Open Justice Licence) | `search_caselaw`, `lookup_judgment`, `summarise_judgment`, `get_judgments_for_section`, search-by-judge / party |
-| `lex` | Remote HTTP, semantic search | Complements the local `caselaw` server |
+| `lex` | Remote HTTP, semantic search over 63,000 judgments | complements the local `caselaw` server |
 
 The two local servers are TypeScript and need a one-time build (no API key — they query public government APIs):
 
@@ -371,55 +260,35 @@ cd ../caselaw && npm install && npm run build
 
 ---
 
-## ⚖️ Jurisdiction & legal currency
+## 📊 Risk scoring
 
-This suite is **England & Wales only**. Scots law and Northern Irish law are out of scope.
+Every finding carries a standardised severity, and the flagship review aggregates them into a single 0–100 **Contract Safety Score** — written the way solicitors read, with the precise statute in the margin.
 
-Post-2024 reforms are moving fast, so commencement-aware skills (`employment`, `tenancy`, `gdpr`, `consumer`, `corporate`, `legislation-tracker`, `pre-launch`) run a **live in-force check** before treating any reform as binding:
-
-```mermaid
-flowchart TD
-    START["Cited reform / Act / section"] --> CHK{"Commencement<br/>checked via MCP?"}
-    CHK -->|in force| CUR["🟢 Current — binding"]
-    CHK -->|partly in force| TRA["🟡 Transitional — note the provisions"]
-    CHK -->|enacted, not commenced| PRO["🔵 Prospective — flag, do not treat as binding"]
-    CHK -->|repealed / amended| REP["🔴 Repealed or amended — warn"]
-    CHK -->|lookup unavailable| UNK["⚪ Unknown — state the limitation"]
-```
-
-Risk is always reported with standardised indicators: 🔴 **High** · 🟡 **Medium** · 🟢 **Low**.
+<p align="center">
+  <img src="doc-site/public/images/risk-scoring-2026.jpg" alt="Risk scoring — the methodology" width="820">
+  <br><sub><em>Plate IX — the risk methodology, from safe to refuse-to-sign.</em></sub>
+</p>
 
 ---
 
-## 🚨 Escalation triggers
+## 🧑‍💼 Who it's for
 
-Every skill checks its own output for signals that need a human solicitor *now*, and prepends an escalation banner above the disclaimer when it finds one:
-
-- ⚔️ Active litigation or pre-action correspondence (LBA, Part 36 offer, court order)
-- 🏛️ Regulator action or enquiry (FCA, ICO, HMRC, SRA, CMA, Ofcom…)
-- 🔓 Personal data breach (> 100 subjects, special-category, or children's data)
-- ⚠️ Criminal liability (corporate manslaughter, ECCTA failure-to-prevent fraud, MLR/sanctions breaches)
-- ⏳ Imminent limitation period (< 30 days)
-- 👔 Director personal liability (wrongful trading, misfeasance, disqualification)
-- 📣 Whistleblowing / PIDA-protected disclosure
+- 🧑‍💻 **Freelancers & contractors** — check contracts for IR35 traps, unfair terms, and missing protections before you sign · `first-read → freelancer → ir35 → negotiate`
+- 🏢 **Small business owners** — review supplier contracts, generate NDAs, audit UK GDPR compliance · `review → compliance → terms`
+- 🏠 **Property professionals** — analyse leases and tenancies against the Renters' Rights Act 2025 · `property → tenancy`
+- ⚖️ **In-house legal teams** — a first-pass triage tool so solicitors focus on what matters · `review → benchmark → due-diligence → report-pdf`
+- 👩‍💻 **Developers & legal tech** — extend with new skills or wire the MCP servers into your own apps · see [Contributing](CONTRIBUTING.md)
 
 ---
 
 ## 🧱 How it works
 
-Each skill is a **self-contained Markdown prompt** — no runtime, no SDK, no compiled code. The host agent reads the skill and runs it, using whatever capabilities the host provides (file reading, web fetch, subagents, MCP, PDF generation). That makes the skills:
+A skill is just Markdown the host reads and executes — portable, auditable, forkable. There is no compiled code and no key baked in.
 
-- **Portable** — they run in Claude Code today, and any compatible agent host tomorrow.
-- **Auditable** — the entire behaviour of a skill is the Markdown you can read in `skills/legal-*/SKILL.md`.
-- **Forkable** — change a prompt, re-run the parity guard, ship.
-
-```mermaid
-flowchart LR
-    F["skills/legal-review/SKILL.md<br/>(plain Markdown prompt)"] -->|install.sh| H["~/.claude/skills/"]
-    H -->|/legal review| HOST["Host reads + executes the prompt"]
-    HOST --> CAP["Uses host capabilities:<br/>files · web · subagents · MCP · PDF"]
-    CAP --> O["📄 Disclaimer-prefixed output"]
-```
+<p align="center">
+  <img src="doc-site/public/images/how-it-works-2026.jpg" alt="How it works — skills are Markdown the host reads and runs" width="820">
+  <br><sub><em>Plate X — a skill is Markdown your agent host reads and runs.</em></sub>
+</p>
 
 ---
 
@@ -436,77 +305,29 @@ uk-legal-skills/
 ├── registry/               # skill-registry.json — the canonical command catalogue
 ├── samples/                # synthetic sample documents for testing
 ├── evaluation/             # expected-findings corpus + scorer
-├── doc-site/               # VitePress documentation site
-├── install.sh / uninstall.sh
-└── .mcp.json               # registers the three MCP servers
+├── doc-site/               # VitePress documentation site (ailegal.the-counsel.co.uk)
+└── install.sh / uninstall.sh
 ```
 
 ---
 
 ## 🧪 Development & tests
 
-A small audit suite keeps the skills, agents, router, registry, and docs in lockstep (Node 18+):
+A small audit suite keeps skills, agents, router, registry, and docs in lockstep (Node 18+):
 
 ```bash
 npm run test:skills        # 38-skill ↔ 12-agent ↔ router ↔ registry parity guard
-npm run test:docs          # regenerates the command reference and checks docs parity
-npm run test:evaluations   # validates the expected-findings eval corpus
+npm run test:docs          # regenerate the command reference and check docs parity
+npm run test:evaluations   # validate the expected-findings eval corpus
 npm run docs:generate      # rebuild the command reference from the registry
 ```
 
-The MCP servers carry their own `node --test` suites:
+The MCP servers carry their own `node --test` suites (`cd mcp-servers/<server> && npm test`).
 
-```bash
-cd mcp-servers/uk-legislation && npm test   # 5 tests
-cd mcp-servers/caselaw && npm test          # 9 tests
-```
-
-```mermaid
-flowchart LR
-    REG["registry/skill-registry.json"] --> AUD["audit_skills.mjs"]
-    SKILLS["skills/legal-*"] --> AUD
-    AGENTS["agents/legal-*"] --> AUD
-    ROUTER["legal/SKILL.md"] --> AUD
-    AUD -->|"38 ↔ 12 ↔ router ↔ registry"| PASS["✅ parity OK"]
-```
-
----
-
-## 💻 Examples
-
-```bash
-# Triage before a deep review
-/legal first-read services-agreement.pdf
-
-# Full flagship review of a commercial lease (5 agents → Safety Score)
-/legal review commercial-lease.docx
-
-# Compare two NDA drafts and flag dangerous changes
-/legal compare nda-v1.docx nda-v2.docx
-
-# Generate a UK GDPR / PECR-compliant privacy policy from a live site
-/legal privacy https://example.co.uk
-
-# Determine IR35 status of a contractor agreement
-/legal ir35 contractor-agreement.pdf
-
-# Search case law on a point of employment law
-/legal caselaw "constructive dismissal implied term of trust and confidence"
-
-# Turn the latest review into a client-ready PDF
-/legal report-pdf
-```
-
-A typical `/legal review` opens like this (every output starts with the disclaimer):
-
-```text
-AI-Generated Legal Analysis — This output is produced by AI and does not constitute legal advice. …
-
-🛡️ Contract Safety Score: 64 / 100  (Medium risk)
-
-🔴 High-risk clauses (3)   🟡 Medium (7)   🟢 Low (12)
-1. 🔴 Clause 14.2 — Uncapped indemnity. Estimated exposure: £—. Suggested replacement: …
-```
+<p align="center">
+  <img src="doc-site/public/images/skills-register-2026.jpg" alt="One registry, four consumers, one audit" width="760">
+  <br><sub><em>Plate XI — one registry, several consumers, one audit. The single source of truth.</em></sub>
+</p>
 
 ---
 
@@ -529,7 +350,7 @@ Not for the `/legal` commands — the agent host (Claude Code) provides model ac
 <details>
 <summary><b>Is this legal advice?</b></summary>
 
-No. It's AI-generated analysis and drafting to use as a starting point. Always have a qualified solicitor review before you sign or rely on anything. See the [disclaimer](#-disclaimer).
+No. It's AI-generated analysis and drafting to use as a starting point. Always have a qualified solicitor review before you sign or rely on anything.
 </details>
 
 <details>
@@ -539,15 +360,15 @@ No — England & Wales only, by design. The statutes, section numbers, and marke
 </details>
 
 <details>
-<summary><b>How does it stay up to date with new legislation?</b></summary>
+<summary><b>How does it stay current with new legislation?</b></summary>
 
-Commencement-aware skills run live in-force checks through the legislation MCP server before treating a reform as binding, and classify provisions as current, transitional, prospective, repealed, or unknown.
+Commencement-aware skills run live in-force checks through the legislation MCP server before treating a reform as binding — see <a href="#-jurisdiction--legal-currency">Jurisdiction & legal currency</a>.
 </details>
 
 <details>
 <summary><b>Can I add my own skill?</b></summary>
 
-Yes — see [CONTRIBUTING.md](CONTRIBUTING.md). Add a `SKILL.md`, wire it into the router and `registry/skill-registry.json`, and run `npm run test:skills`.
+Yes — see <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>. Add a <code>SKILL.md</code>, wire it into the router and <code>registry/skill-registry.json</code>, and run <code>npm run test:skills</code>.
 </details>
 
 ---
@@ -558,6 +379,11 @@ Contributions are welcome — new skills, agent improvements, MCP tooling, sampl
 
 The golden rules: **England & Wales only**, every output starts with the disclaimer block, risk indicators are 🔴/🟡/🟢, and the parity guard must pass.
 
+<p align="center">
+  <img src="doc-site/public/images/contributing-2026.jpg" alt="How to contribute — fork, branch, test, open a PR" width="760">
+  <br><sub><em>Plate XII — fork, branch, test, open a pull request.</em></sub>
+</p>
+
 ---
 
 ## 📚 Data sources & licences
@@ -565,7 +391,7 @@ The golden rules: **England & Wales only**, every output starts with the disclai
 - **Legislation** — [legislation.gov.uk](https://www.legislation.gov.uk) under the [Open Government Licence v3.0](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 - **Case law** — [Find Case Law, The National Archives](https://caselaw.nationalarchives.gov.uk) under the [Open Justice Licence](https://caselaw.nationalarchives.gov.uk/open-justice-licence).
 
-This project is not affiliated with or endorsed by HM Government, HM Courts & Tribunals Service, or The National Archives.
+Not affiliated with or endorsed by HM Government, HM Courts & Tribunals Service, or The National Archives.
 
 ---
 
@@ -580,14 +406,12 @@ under the laws of England and Wales.
 
 ---
 
-## 📄 License
+## 📄 Licence
 
 [MIT](LICENSE) — use it commercially, fork it, build on it. Attribution appreciated.
 
-<div align="center">
-
-**Built for England & Wales. Not legal advice.**
-
-If this saved you time, a ⭐ helps others find it.
-
-</div>
+<p align="center">
+  <sub><em>UK Legal Skills — Established MMXXVI · Built for England &amp; Wales · Not legal advice.</em></sub>
+  <br><br>
+  If this saved you time, a ⭐ helps others find it.
+</p>
