@@ -102,18 +102,8 @@ Most everyday legal work is *triage*: spotting the dangerous clause, the missing
 
 <p align="center">
   <img src="doc-site/public/images/first-read-2026.jpg" alt="The first read — SIGN, NEGOTIATE or WALK in under fifteen seconds" width="820">
-  <br><sub><em>Plate II — the first read: a verdict before the deep review.</em></sub>
+  <br><sub><em>Plate II — the first read: a verdict before the deep review. <code>contract → triage → SIGN · NEGOTIATE · WALK</code>.</em></sub>
 </p>
-
-```mermaid
-%% kept as a quick text map; the plate above is the canonical view
-flowchart LR
-    D["📄 A contract arrives"] --> FR["/legal first-read"]
-    FR --> Q{"verdict"}
-    Q -->|🟢 SIGN| S["proceed, keep the record"]
-    Q -->|🟡 NEGOTIATE| N["/legal review → /legal negotiate"]
-    Q -->|🔴 WALK| W["instruct a solicitor"]
-```
 
 ---
 
