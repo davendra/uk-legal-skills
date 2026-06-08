@@ -1,7 +1,22 @@
 import DefaultTheme from 'vitepress/theme'
 import { h, nextTick, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute } from 'vitepress'
+import mediumZoom, { type Zoom } from 'medium-zoom'
 import './custom.css'
+
+let zoom: Zoom | undefined
+
+// Click any content image to open it full-size in a lightbox overlay.
+function setupImageZoom() {
+  void nextTick(() => {
+    if (!zoom) {
+      zoom = mediumZoom({ background: 'var(--vp-c-bg)', margin: 24 })
+    }
+    // Re-target the current page's images (skip linked images and the masthead).
+    zoom.detach()
+    zoom.attach('.vp-doc img:not(a img):not(.no-zoom)')
+  })
+}
 
 function normalizeDocsLinks() {
   document.querySelectorAll<HTMLAnchorElement>('a[href^="/docs-site"]').forEach((anchor) => {
@@ -44,12 +59,20 @@ const Layout = {
     }
 
     if (!import.meta.env.SSR) {
-      watch(() => route.path, applyDocsUiEnhancements, { immediate: true, flush: 'post' })
+      watch(
+        () => route.path,
+        () => {
+          applyDocsUiEnhancements()
+          setupImageZoom()
+        },
+        { immediate: true, flush: 'post' },
+      )
 
       onMounted(() => {
         observer = new MutationObserver(applyDocsUiEnhancements)
         observer.observe(document.documentElement, { childList: true, subtree: true })
         applyDocsUiEnhancements()
+        setupImageZoom()
       })
 
       onUnmounted(() => {

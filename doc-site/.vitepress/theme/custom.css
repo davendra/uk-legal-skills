@@ -498,3 +498,26 @@
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ---- Click-to-open image zoom (medium-zoom) ---- */
+.vp-doc img:not(a img):not(.no-zoom) {
+  cursor: zoom-in;
+}
+
+/* Keep the lightbox above the VitePress nav/sidebar */
+.medium-zoom-overlay {
+  z-index: 2000;
+}
+.medium-zoom-image--opened {
+  z-index: 2001;
+  cursor: zoom-out;
+  border-radius: 4px;
+}
+
+/* Honour the reduced-motion preference for the zoom transition */
+@media (prefers-reduced-motion: reduce) {
+  .medium-zoom-image,
+  .medium-zoom-overlay {
+    transition: none !important;
+  }
+}
