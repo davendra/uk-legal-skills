@@ -214,7 +214,7 @@ interface CacheEntry {
 | Fetch timeout | 30 seconds (`30_000` ms) |
 | Timeout mechanism | `AbortController` with `setTimeout` |
 | Accept header | `application/xml, text/xml, application/atom+xml, */*` |
-| User-Agent | `ai-legal-uk-mcp/1.0` |
+| User-Agent | `uk-legal-skills-mcp/1.0` |
 | Redirect | `follow` |
 
 ::: warning Timeout Handling

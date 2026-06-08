@@ -86,7 +86,7 @@ async function fetchText(url: string, ttl: number): Promise<string> {
     res = await fetch(url, {
       headers: {
         Accept: "application/xml, application/atom+xml, */*",
-        "User-Agent": "ai-legal-uk-caselaw-mcp/1.0",
+        "User-Agent": "uk-legal-skills-caselaw-mcp/1.0",
       },
       redirect: "follow",
       signal: controller.signal,
@@ -338,7 +338,7 @@ server.tool(
       const url = `${BASE_URL}/${cleanUri}/data.pdf`;
 
       const res = await fetch(url, {
-        headers: { "User-Agent": "ai-legal-uk-caselaw-mcp/1.0" },
+        headers: { "User-Agent": "uk-legal-skills-caselaw-mcp/1.0" },
         redirect: "follow",
       });
       if (res.status === 404) throw new Error(`PDF not available for ${cleanUri}`);
@@ -400,7 +400,7 @@ async function fetchHtmlAsMarkdown(url: string): Promise<string | null> {
 
   try {
     const res = await fetch(url, {
-      headers: { Accept: "text/html", "User-Agent": "ai-legal-uk-caselaw-mcp/1.0" },
+      headers: { Accept: "text/html", "User-Agent": "uk-legal-skills-caselaw-mcp/1.0" },
       redirect: "follow",
     });
     if (!res.ok) return null;
@@ -475,7 +475,7 @@ server.tool(
     try {
       const pdfUrl = `${BASE_URL}/${cleanUri}/data.pdf`;
       const res = await fetch(pdfUrl, {
-        headers: { "User-Agent": "ai-legal-uk-caselaw-mcp/1.0" },
+        headers: { "User-Agent": "uk-legal-skills-caselaw-mcp/1.0" },
         redirect: "follow",
       });
       if (res.ok) {

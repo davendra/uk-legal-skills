@@ -129,7 +129,7 @@ async function fetchXml(url: string): Promise<string> {
     res = await fetch(url, {
       headers: {
         Accept: "application/xml, text/xml, application/atom+xml, */*",
-        "User-Agent": "ai-legal-uk-mcp/1.0",
+        "User-Agent": "uk-legal-skills-mcp/1.0",
       },
       redirect: "follow",
       signal: controller.signal,
