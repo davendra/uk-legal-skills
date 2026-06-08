@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 const base = process.env.VITEPRESS_BASE || '/'
-const siteUrl = 'https://the-counsel.co.uk'
+const siteUrl = 'https://ailegal.the-counsel.co.uk'
 const socialImageUrl = `${siteUrl}/opengraph-image`
 
 function canonicalPath(relativePath: string): string {
