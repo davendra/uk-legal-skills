@@ -1,6 +1,6 @@
 # How to Contribute
 
-UK Legal Skills is an open-source project licensed under the MIT License. We welcome contributions across every part of the system -- from new legal skills to agent improvements, MCP server tooling, sample documents, and documentation improvements.
+UK Legal Skills is a source-available project licensed under the Functional Source License (FSL-1.1-Apache-2.0). We welcome contributions across every part of the system -- from new legal skills to agent improvements, MCP server tooling, sample documents, and documentation improvements.
 
 ![Contributors route (broadsheet rebrand) — fork, branch, test, open PR](/images/contributing-2026.jpg)
 
@@ -105,31 +105,10 @@ Before submitting a PR, verify:
 
 ## License
 
-This project is licensed under the **MIT License**. By contributing, you agree that your contributions will be licensed under the same terms.
+This project is **source-available** under the [Functional Source License (FSL-1.1-Apache-2.0)](https://github.com/davendra/uk-legal-skills/blob/main/LICENSE.md). You may use, modify, and redistribute it for any purpose **other than building a competing product or hosted service**; two years after each release it converts to Apache 2.0. By contributing, you agree your contributions are licensed under the same terms.
 
-```
-MIT License
+Commercial licences (for competing or SaaS use) are available — contact licensing@the-counsel.co.uk.
 
-Copyright (c) 2025 Davendra Patel
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
 
 ::: info
 All skill files (`SKILL.md`) and agent files are pure Markdown with no runtime code dependencies. This makes them straightforward to write and review -- no build step is required for skill-only changes.

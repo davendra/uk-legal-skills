@@ -24,7 +24,7 @@ export default defineConfig({
   cleanUrls: true,
   base,
   title: 'UK Legal Skills',
-  description: 'Open-source legal skills for Claude Code, scoped to England & Wales. 38 skills, 12 agents, MCP servers over the entirety of E&W statute and caselaw.',
+  description: 'Source-available legal skills for Claude Code, scoped to England & Wales. 38 skills, 12 agents, MCP servers over the entirety of E&W statute and caselaw.',
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: `${base}the-counsel-logo.svg` }],
     ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
@@ -36,7 +36,7 @@ export default defineConfig({
     const title = pageData.title
       ? `${pageData.title} · UK Legal Skills`
       : 'UK Legal Skills'
-    const description = pageData.description || 'Open-source legal skills for Claude Code, scoped to England & Wales. 38 skills, 12 agents, MCP servers over the entirety of E&W statute and caselaw.'
+    const description = pageData.description || 'Source-available legal skills for Claude Code, scoped to England & Wales. 38 skills, 12 agents, MCP servers over the entirety of E&W statute and caselaw.'
 
     return [
       ['link', { rel: 'canonical', href: canonical }],
@@ -188,7 +188,7 @@ export default defineConfig({
 
     footer: {
       message: 'UK Legal Skills — Established MMXXVI · Built for England & Wales · Not legal advice.',
-      copyright: 'Open source under MIT Licence',
+      copyright: 'Source-available under the Functional Source License (FSL-1.1-Apache-2.0)',
     },
 
     editLink: {

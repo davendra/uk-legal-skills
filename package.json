@@ -1,8 +1,8 @@
 {
   "name": "uk-legal-skills",
   "version": "1.0.0",
-  "description": "Open-source Claude Code skills for England & Wales legal work — 38 /legal commands, 12 agents, and UK legislation + case law MCP servers.",
-  "license": "MIT",
+  "description": "Source-available Claude Code skills for England & Wales legal work — 38 /legal commands, 12 agents, and UK legislation + case law MCP servers.",
+  "license": "SEE LICENSE IN LICENSE.md",
   "author": "Davendra Patel",
   "homepage": "https://github.com/davendra/uk-legal-skills#readme",
   "repository": {

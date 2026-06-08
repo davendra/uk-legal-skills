@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/davendra/uk-legal-skills?style=flat-square&color=8b1f1f&labelColor=1a1410" alt="MIT License"></a>
+  <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-FSL--1.1--Apache--2.0-8b1f1f?style=flat-square&labelColor=1a1410" alt="License: FSL-1.1-Apache-2.0"></a>
   <a href="registry/skill-registry.json"><img src="https://img.shields.io/badge/skills-38-8b1f1f?style=flat-square&labelColor=1a1410" alt="38 skills"></a>
   <a href="agents/"><img src="https://img.shields.io/badge/agents-12-8b1f1f?style=flat-square&labelColor=1a1410" alt="12 agents"></a>
   <a href=".mcp.json"><img src="https://img.shields.io/badge/MCP%20servers-3-8b1f1f?style=flat-square&labelColor=1a1410" alt="3 MCP servers"></a>
@@ -325,7 +325,7 @@ The MCP servers carry their own `node --test` suites (`cd mcp-servers/<server> &
 
 Prefer a polished web app to the terminal? **[The Counsel](https://the-counsel.co.uk)** is a hosted product built on these same skills — document upload, live streaming analysis, audio briefings, tracked-changes export, and matter management in the browser.
 
-This repository is the open-source **skills engine**; The Counsel is a separate, independently deployed product. Use whichever fits your workflow.
+This repository is the source-available **skills engine**; The Counsel is a separate, independently deployed product. Use whichever fits your workflow.
 
 ---
 
@@ -398,7 +398,7 @@ under the laws of England and Wales.
 
 ## 📄 Licence
 
-[MIT](LICENSE) — use it commercially, fork it, build on it. Attribution appreciated.
+**Source-available** under the [Functional Source License (FSL-1.1-Apache-2.0)](LICENSE.md): use it inside your firm or business, for research, and when serving your own clients; fork and modify freely. You may **not** repackage it as a competing product or hosted service — that needs a [commercial licence](LICENSE.md#commercial-licensing). Each release converts to Apache 2.0 two years after its date.
 
 <p align="center">
   <sub><em>UK Legal Skills — Established MMXXVI · Built for England &amp; Wales · Not legal advice.</em></sub>

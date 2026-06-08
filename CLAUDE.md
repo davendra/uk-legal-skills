@@ -4,7 +4,7 @@ Guidance for Claude Code (claude.ai/code) when working in this repository. There
 
 ## What this repo is
 
-Open-source **Claude Code skills + agents** for **England & Wales** legal work: 38 `/legal …` commands, 12 subagents, and two MCP servers for live UK legislation and case law. Each skill is a self-contained Markdown prompt — no runtime, no SDK, no API key. They install into `~/.claude/` via `install.sh`.
+Source-available **Claude Code skills + agents** for **England & Wales** legal work: 38 `/legal …` commands, 12 subagents, and two MCP servers for live UK legislation and case law. Each skill is a self-contained Markdown prompt — no runtime, no SDK, no API key. They install into `~/.claude/` via `install.sh`.
 
 A separate hosted web product, **The Counsel** (https://the-counsel.co.uk), is built on these same skills but lives in its own private repository and is **not** part of this repo. Keep everything here platform-neutral (it should run cleanly in Claude Code, OpenAI, Codex, and other agent hosts).
 

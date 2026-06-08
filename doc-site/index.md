@@ -35,8 +35,8 @@ features:
     title: Reads like an editorial broadsheet
     details: Reports are written the way solicitors read — masthead, marginalia, drop-caps and Roman-numeral cells, with risk flags and the precise statute in the margin — because reading carefully is half the job.
   - icon: "VI."
-    title: Open source under MIT
-    details: Use it commercially. The skills run inside your own agent host with your own provider key, so your contract text stays on your machine and never touches a third-party server. The entire codebase is open and documented.
+    title: Source-available (FSL-1.1)
+    details: Use it inside your firm, for research, and when serving your own clients — the skills run inside your own agent host with your own provider key, so your contract text stays on your machine and never touches a third-party server. Building a competing product or hosted service needs a commercial licence; each release converts to Apache 2.0 after two years.
 ---
 
 ## The principle
@@ -94,5 +94,5 @@ All analysis is scoped to the laws of England & Wales. Scottish, Northern Irish,
 ---
 
 <p style="text-align: center; font-style: italic; color: var(--vp-c-text-2);">
-  UK Legal Skills — Established MMXXVI · Built for England &amp; Wales · MIT
+  UK Legal Skills — Established MMXXVI · Built for England &amp; Wales · FSL-1.1
 </p>

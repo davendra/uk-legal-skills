@@ -4,7 +4,7 @@ Guidance for Codex and other agent hosts working in this repository. This mirror
 
 ## What this repo is
 
-Open-source **agent skills** for **England & Wales** legal work: 38 `/legal …` commands, 12 subagents, and two MCP servers for live UK legislation and case law. Each skill is a self-contained Markdown prompt — no runtime, no SDK, no API key. The skills are **platform-neutral**: they must run cleanly in Claude Code, OpenAI, Codex, and other hosts. When a skill references a capability (file reading, URL fetching, subagents, MCP, PDF generation, saved output), use the equivalent provided by the current host; if the host lacks it, state the limitation and continue with the best available evidence.
+Source-available **agent skills** for **England & Wales** legal work: 38 `/legal …` commands, 12 subagents, and two MCP servers for live UK legislation and case law. Each skill is a self-contained Markdown prompt — no runtime, no SDK, no API key. The skills are **platform-neutral**: they must run cleanly in Claude Code, OpenAI, Codex, and other hosts. When a skill references a capability (file reading, URL fetching, subagents, MCP, PDF generation, saved output), use the equivalent provided by the current host; if the host lacks it, state the limitation and continue with the best available evidence.
 
 A separate hosted web product, **The Counsel** (https://the-counsel.co.uk), is built on these same skills but lives in its own private repository and is **not** part of this repo.
 
