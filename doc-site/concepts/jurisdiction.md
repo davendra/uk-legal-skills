@@ -1,6 +1,6 @@
 # Jurisdiction: England & Wales
 
-All analysis produced by AI Legal UK is scoped exclusively to the laws of **England and Wales**. This is not a UK-wide tool -- Scots law and Northern Ireland law are explicitly out of scope.
+All analysis produced by UK Legal Skills is scoped exclusively to the laws of **England and Wales**. This is not a UK-wide tool -- Scots law and Northern Ireland law are explicitly out of scope.
 
 ## Why England & Wales Only
 
@@ -113,7 +113,7 @@ Never add references to Scottish statutes (e.g., Land Registration (Scotland) Ac
 
 ## Common Law Principles
 
-AI Legal UK also references key common law principles where applicable:
+UK Legal Skills also references key common law principles where applicable:
 
 - **Banks v Goodfellow (1870)** -- testamentary capacity test for wills
 - **Restraint of trade doctrine** -- reasonableness of restrictive covenants

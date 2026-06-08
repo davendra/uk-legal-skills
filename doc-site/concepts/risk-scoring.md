@@ -20,7 +20,7 @@ Every analysis produces a risk score so you can quickly understand how safe a do
 
 ## Detailed Scoring Reference
 
-AI Legal UK uses a consistent scoring system across all skills to communicate risk clearly and actionably.
+UK Legal Skills uses a consistent scoring system across all skills to communicate risk clearly and actionably.
 
 ## Overall Review Score
 

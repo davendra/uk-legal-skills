@@ -1,6 +1,6 @@
 # How to Contribute
 
-AI Legal UK is an open-source project licensed under the MIT License. We welcome contributions across every part of the system -- from new legal skills to agent improvements, MCP server tooling, sample documents, and documentation improvements.
+UK Legal Skills is an open-source project licensed under the MIT License. We welcome contributions across every part of the system -- from new legal skills to agent improvements, MCP server tooling, sample documents, and documentation improvements.
 
 ![Contributors route (broadsheet rebrand) — fork, branch, test, open PR](/images/contributing-2026.jpg)
 

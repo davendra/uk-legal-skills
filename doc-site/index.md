@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-  name: "AI Legal UK"
+  name: "UK Legal Skills"
   text: "The Counsel"
   tagline: "A junior counsel in your pocket. Thirty-eight legal skills, twelve agents, and the entirety of England & Wales statute — assembled into a single quiet assistant for the work of reading, drafting and risking contracts."
   image:
@@ -94,5 +94,5 @@ All analysis is scoped to the laws of England & Wales. Scottish, Northern Irish,
 ---
 
 <p style="text-align: center; font-style: italic; color: var(--vp-c-text-2);">
-  AI Legal UK · <em>The Counsel</em> — Established MMXXVI · Built for England &amp; Wales · MIT
+  UK Legal Skills — Established MMXXVI · Built for England &amp; Wales · MIT
 </p>

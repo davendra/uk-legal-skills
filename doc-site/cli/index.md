@@ -2,7 +2,7 @@
 
 These are the commands you can run inside Claude Code, Codex, or another compatible agent host to analyse legal documents. Think of each command as a specialist who knows one area of law inside out — you give them a document, they give you back a detailed analysis with risk scores, recommendations, and specific language you can use.
 
-AI Legal UK · *The Counsel* provides **38 commands** that run inside any compatible agent host as skills. Every command is invoked with the `/legal` prefix.
+UK Legal Skills provides **38 commands** that run inside any compatible agent host as skills. Every command is invoked with the `/legal` prefix.
 
 ![The instrument (broadsheet rebrand) — 38 skills across 10 parts](/images/skill-categories-2026.jpg)
 

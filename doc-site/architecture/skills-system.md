@@ -1,6 +1,6 @@
 # Skills System
 
-Skills are the fundamental building block of AI Legal UK. Each skill is a self-contained markdown prompt that instructs an agent host how to analyse a specific type of legal document or perform a specific legal task.
+Skills are the fundamental building block of UK Legal Skills. Each skill is a self-contained markdown prompt that instructs an agent host how to analyse a specific type of legal document or perform a specific legal task.
 
 ## Skill File Structure
 

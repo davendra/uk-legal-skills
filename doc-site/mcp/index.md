@@ -1,6 +1,6 @@
 # MCP Integration
 
-When you ask AI Legal UK to check whether a law has been amended or is still in force, it doesn't just guess from its training data -- it actually looks it up in real time. This is possible because of something called the Model Context Protocol (MCP).
+When you ask UK Legal Skills to check whether a law has been amended or is still in force, it doesn't just guess from its training data -- it actually looks it up in real time. This is possible because of something called the Model Context Protocol (MCP).
 
 Think of MCP like giving the AI a library card. Without it, the AI can only tell you what it learned during training (which might be months out of date). With MCP, the AI can walk into the library (legislation.gov.uk and a database of 63,000 court cases) and check the actual current state of the law.
 
@@ -36,9 +36,9 @@ The AI can:
 MCP bridges the gap between the AI's training cutoff and the current state of UK law. This is especially important for fast-moving areas like employment law (ERA 2025), consumer protection (DMCCA 2024), and corporate compliance (ECCTA 2023).
 :::
 
-## How AI Legal UK Uses MCP
+## How UK Legal Skills Uses MCP
 
-AI Legal UK connects to **two MCP servers** that provide complementary coverage:
+UK Legal Skills connects to **two MCP servers** that provide complementary coverage:
 
 | Server | Type | Source | Coverage |
 |--------|------|--------|----------|
@@ -74,7 +74,7 @@ Skills reference MCP tools by name in their prompts. For example, the Legislatio
 The skill itself does not contain code -- it is a Markdown prompt that instructs the active agent host to use the available MCP tools when it needs live data.
 
 ::: tip No Extra Setup for CLI Users
-If you installed AI Legal UK via `install.sh`, the MCP configuration is already in place. The `uk-legislation` server starts automatically when Claude Code needs it. The remote `lex` server requires no local installation.
+If you installed UK Legal Skills via `install.sh`, the MCP configuration is already in place. The `uk-legislation` server starts automatically when Claude Code needs it. The remote `lex` server requires no local installation.
 :::
 
 ## When MCP Is Used

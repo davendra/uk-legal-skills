@@ -2,11 +2,11 @@
 
 Let's be upfront about what this tool is and isn't.
 
-AI Legal UK is a productivity tool for legal professionals and business users. It is not a substitute for qualified legal advice.
+UK Legal Skills is a productivity tool for legal professionals and business users. It is not a substitute for qualified legal advice.
 
 ## Standard Disclaimer
 
-Every output produced by AI Legal UK begins with this disclaimer:
+Every output produced by UK Legal Skills begins with this disclaimer:
 
 ```
 AI-Generated Legal Analysis — This output is produced by AI and does not
@@ -22,7 +22,7 @@ This disclaimer must appear at the top of every user-facing output. It is not op
 
 ## What This Tool Is
 
-AI Legal UK uses provider-neutral agent prompts to perform structured legal analysis. It can:
+UK Legal Skills uses provider-neutral agent prompts to perform structured legal analysis. It can:
 
 - **Identify risks** in contracts, agreements, and policies
 - **Score documents** against compliance frameworks
@@ -34,7 +34,7 @@ AI Legal UK uses provider-neutral agent prompts to perform structured legal anal
 
 ## What This Tool Is NOT
 
-AI Legal UK does **not** provide legal advice. Specifically:
+UK Legal Skills does **not** provide legal advice. Specifically:
 
 | Not Suitable For | Why |
 |------------------|-----|
@@ -69,7 +69,7 @@ AI Legal UK does **not** provide legal advice. Specifically:
 
 **Jurisdiction creep.** The tool is scoped to England & Wales. It will not flag issues arising under Scottish, Northern Irish, or international law that may apply to cross-border transactions.
 
-**No privilege.** Communications with AI Legal UK are not protected by legal professional privilege. Do not use it as a substitute for instructing a solicitor when privilege is needed.
+**No privilege.** Communications with UK Legal Skills are not protected by legal professional privilege. Do not use it as a substitute for instructing a solicitor when privilege is needed.
 :::
 
 ## Liability
@@ -86,5 +86,5 @@ The tool is designed to **save time, not replace lawyers**. It helps you ask bet
 4. Have qualified legal counsel review and approve before signing
 
 ::: tip
-Think of AI Legal UK as a highly structured first reader -- not a second opinion. It surfaces issues; a qualified professional resolves them.
+Think of UK Legal Skills as a highly structured first reader -- not a second opinion. It surfaces issues; a qualified professional resolves them.
 :::

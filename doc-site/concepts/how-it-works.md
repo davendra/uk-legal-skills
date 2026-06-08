@@ -1,6 +1,6 @@
-# How AI Legal UK Works
+# How UK Legal Skills Works
 
-When you ask AI Legal UK to review a contract, something clever happens behind the scenes. Instead of one AI reading the whole thing, the system splits the work across multiple specialist AI agents -- each one focused on a different aspect of the law. This is like sending your contract to five different solicitors simultaneously, then getting a combined report.
+When you ask UK Legal Skills to review a contract, something clever happens behind the scenes. Instead of one AI reading the whole thing, the system splits the work across multiple specialist AI agents -- each one focused on a different aspect of the law. This is like sending your contract to five different solicitors simultaneously, then getting a combined report.
 
 ## The 60-Second Version
 
@@ -20,7 +20,7 @@ When you ask AI Legal UK to review a contract, something clever happens behind t
 
 ## The Technical Detail
 
-AI Legal UK analyses legal documents using a large language model supplied by your agent host. Rather than traditional code, the system is built from **markdown prompt files** that direct the model in how to reason about English law.
+UK Legal Skills analyses legal documents using a large language model supplied by your agent host. Rather than traditional code, the system is built from **markdown prompt files** that direct the model in how to reason about English law.
 
 ## Skills Are Markdown Prompts
 

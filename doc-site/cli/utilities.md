@@ -101,7 +101,7 @@ The generated PDF is designed to be sent directly to clients or attached to advi
 
 ## /legal fetch-samples
 
-Downloads 30 sample legal documents across 3 quality tiers for testing AI Legal UK commands.
+Downloads 30 sample legal documents across 3 quality tiers for testing UK Legal Skills commands.
 
 ### Syntax
 
@@ -188,7 +188,7 @@ This command downloads documents from public sources and requires an active inte
 
 ### Using Samples for Testing
 
-After downloading, you can test any AI Legal UK command against the samples:
+After downloading, you can test any UK Legal Skills command against the samples:
 
 ```bash
 # Test contract review against a good document

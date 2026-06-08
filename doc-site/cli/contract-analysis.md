@@ -1,6 +1,6 @@
 # Contract Analysis
 
-Contract analysis is the heart of AI Legal UK. These seven commands help you understand exactly what you are signing -- before you sign it. Whether you need a full review, a risk breakdown, or help negotiating better terms, there is a command for it.
+Contract analysis is the heart of UK Legal Skills. These seven commands help you understand exactly what you are signing -- before you sign it. Whether you need a full review, a risk breakdown, or help negotiating better terms, there is a command for it.
 
 Seven commands for reviewing, comparing, and benchmarking contracts under the laws of England and Wales.
 
