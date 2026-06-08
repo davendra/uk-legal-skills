@@ -21,6 +21,7 @@ function normalizeDocsLinks(code: string): string {
 
 export default defineConfig({
   appearance: true,
+  cleanUrls: true,
   base,
   title: 'UK Legal Skills',
   description: 'Open-source legal skills for Claude Code, scoped to England & Wales. 38 skills, 12 agents, MCP servers over the entirety of E&W statute and caselaw.',

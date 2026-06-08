@@ -3,6 +3,5 @@
   "framework": "vitepress",
   "buildCommand": "npm run build",
   "outputDirectory": ".vitepress/dist",
-  "cleanUrls": true,
-  "trailingSlash": false
+  "cleanUrls": true
 }
