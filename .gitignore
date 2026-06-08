@@ -31,3 +31,6 @@ doc-site/.vitepress/dist/
 
 # OS
 .DS_Store
+
+# Vercel
+.vercel/
