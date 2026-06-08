@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title">
+  <title id="title">The Counsel</title>
+  <rect width="96" height="96" fill="#f5f0e6"/>
+  <circle cx="48" cy="48" r="34" fill="none" stroke="#1a1410" stroke-width="4"/>
+  <text x="48" y="58" text-anchor="middle" fill="#1a1410" font-family="Georgia, serif" font-size="34" font-style="italic">C</text>
+</svg>

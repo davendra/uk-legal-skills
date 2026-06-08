@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Strip auto-injected <claude-mem-context> blocks from AGENTS.md before commit.
+# Local-only guardrail; not tracked in the repo.
+
+set -euo pipefail
+
+if [ ! -f AGENTS.md ]; then
+  exit 0
+fi
+
+if ! grep -q '<claude-mem-context>' AGENTS.md; then
+  exit 0
+fi
+
+tmp="$(mktemp)"
+trap 'rm -f "$tmp"' EXIT
+
+awk '
+  /<claude-mem-context>/ { skip = 1; next }
+  /<\/claude-mem-context>/ { skip = 0; next }
+  skip != 1 { lines[++n] = $0 }
+  END {
+    while (n > 0 && lines[n] == "") n--
+    for (i = 1; i <= n; i++) print lines[i]
+    print ""
+  }
+' AGENTS.md > "$tmp"
+
+mv "$tmp" AGENTS.md
+
+if git diff --cached --name-only --diff-filter=ACM | grep -qx AGENTS.md; then
+  git add AGENTS.md
+fi
+
+echo "[pre-commit] Stripped <claude-mem-context> block from AGENTS.md."

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "bad-nda-overreaching",
+    "skillId": "legal-review",
+    "sample": "samples/generated/bad/nda-overreaching.md",
+    "qualityBand": "bad",
+    "expectedFindings": [
+      "overbroad confidentiality definition",
+      "unreasonable duration",
+      "missing exclusions",
+      "one-sided remedies"
+    ],
+    "expectedRisk": "high"
+  },
+  {
+    "id": "mixed-tenancy-rra-transition",
+    "skillId": "legal-tenancy",
+    "sample": "samples/generated/mixed/residential-tenancy-ast.md",
+    "qualityBand": "mixed",
+    "expectedFindings": [
+      "deposit protection",
+      "tenant fees",
+      "Renters' Rights Act 2025 commencement",
+      "safety compliance"
+    ],
+    "expectedRisk": "medium"
+  },
+  {
+    "id": "mixed-outdated-statutes",
+    "skillId": "legal-legislation-tracker",
+    "sample": "samples/generated/mixed/contract-outdated-statutes.md",
+    "qualityBand": "mixed",
+    "expectedFindings": [
+      "outdated statutory reference",
+      "commencement status",
+      "replacement statute",
+      "legislative currency score"
+    ],
+    "expectedRisk": "medium"
+  },
+  {
+    "id": "bad-privacy-policy",
+    "skillId": "legal-gdpr",
+    "sample": "samples/generated/bad/privacy-policy-noncompliant.md",
+    "qualityBand": "bad",
+    "expectedFindings": [
+      "lawful basis",
+      "data subject rights",
+      "retention",
+      "ICO enforcement risk"
+    ],
+    "expectedRisk": "high"
+  },
+  {
+    "id": "bad-aml-policy",
+    "skillId": "legal-aml",
+    "sample": "samples/generated/bad/aml-policy-inadequate.md",
+    "qualityBand": "bad",
+    "expectedFindings": [
+      "customer due diligence",
+      "enhanced due diligence",
+      "sanctions screening",
+      "SAR procedure"
+    ],
+    "expectedRisk": "high"
+  },
+  {
+    "id": "good-mutual-nda",
+    "skillId": "legal-review",
+    "sample": "samples/generated/good/nda-mutual.md",
+    "qualityBand": "good",
+    "expectedFindings": [
+      "mutual obligations",
+      "reasonable duration",
+      "standard exclusions",
+      "governing law"
+    ],
+    "expectedRisk": "low"
+  }
+]

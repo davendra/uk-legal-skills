@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "uk-legislation": {
+      "command": "npx",
+      "args": ["tsx", "mcp-servers/uk-legislation/src/index.ts"]
+    },
+    "lex": {
+      "type": "http",
+      "url": "https://lex.lab.i.ai.gov.uk/mcp"
+    },
+    "caselaw": {
+      "command": "npx",
+      "args": ["tsx", "mcp-servers/caselaw/src/index.ts"]
+    }
+  }
+}

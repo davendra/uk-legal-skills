@@ -1,0 +1,24 @@
+{
+  "name": "caselaw-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for UK Find Case Law API (caselaw.nationalarchives.gov.uk)",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "npm run build && node --test dist/**/*.test.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.88.0",
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "fast-xml-parser": "^5.7.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}

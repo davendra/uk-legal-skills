@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Generated artefacts
+output/
+samples/generated-pdf/
+samples/generated-pdf-results/
+samples/document-extraction-benchmarks/
+evaluation/outputs/
+evaluation/reports/*.json
+!evaluation/reports/latest.json
+doc-site/.vitepress/cache/
+doc-site/.vitepress/dist/
+
+# Agent/tooling local state
+.claude/
+.omc/
+.omx/
+.codegraph/
+.cursor/
+.playwright-mcp/
+
+# OS
+.DS_Store

@@ -1,0 +1,33 @@
+{
+  "name": "uk-legal-skills",
+  "version": "1.0.0",
+  "description": "Open-source Claude Code skills for England & Wales legal work — 38 /legal commands, 12 agents, and UK legislation + case law MCP servers.",
+  "license": "MIT",
+  "author": "Davendra Patel",
+  "homepage": "https://github.com/davendra/uk-legal-skills#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davendra/uk-legal-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davendra/uk-legal-skills/issues"
+  },
+  "keywords": [
+    "claude-code",
+    "legal",
+    "uk-law",
+    "england-wales",
+    "skills",
+    "agents",
+    "mcp",
+    "contract-review",
+    "gdpr"
+  ],
+  "scripts": {
+    "docs:generate": "node scripts/generate_docs_from_registry.mjs",
+    "test:skills": "node scripts/audit_skills.mjs",
+    "test:docs": "node scripts/generate_docs_from_registry.mjs --check && node scripts/audit_docs.mjs",
+    "test:evaluations": "node scripts/audit_eval_corpus.mjs",
+    "eval:score": "node scripts/score_eval_outputs.mjs"
+  }
+}
