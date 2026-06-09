@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/davendra/uk-legal-skills/actions/workflows/ci.yml"><img src="https://github.com/davendra/uk-legal-skills/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/license-FSL--1.1--Apache--2.0-8b1f1f?style=flat-square&labelColor=1a1410" alt="License: FSL-1.1-Apache-2.0"></a>
   <a href="registry/skill-registry.json"><img src="https://img.shields.io/badge/skills-38-8b1f1f?style=flat-square&labelColor=1a1410" alt="38 skills"></a>
   <a href="agents/"><img src="https://img.shields.io/badge/agents-12-8b1f1f?style=flat-square&labelColor=1a1410" alt="12 agents"></a>

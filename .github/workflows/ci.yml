@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  parity:
+    name: Skill, docs & eval parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # The audit scripts use only Node built-ins — no install needed.
+      - name: Skill ↔ agent ↔ router ↔ registry parity
+        run: node scripts/audit_skills.mjs
+      - name: Command reference is up to date
+        run: node scripts/generate_docs_from_registry.mjs --check
+      - name: Docs parity (README + doc-site vs registry)
+        run: node scripts/audit_docs.mjs
+      - name: Evaluation corpus
+        run: node scripts/audit_eval_corpus.mjs
+
+  mcp-servers:
+    name: MCP server tests (${{ matrix.server }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        server: [uk-legislation, caselaw]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: mcp-servers/${{ matrix.server }}/package-lock.json
+      - name: Install
+        working-directory: mcp-servers/${{ matrix.server }}
+        run: npm ci
+      - name: Build + test
+        working-directory: mcp-servers/${{ matrix.server }}
+        run: npm test
+
+  docs-build:
+    name: Docs build (dead-link check)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: doc-site/package-lock.json
+      - name: Install
+        working-directory: doc-site
+        run: npm ci
+      - name: VitePress build (fails on dead links)
+        working-directory: doc-site
+        run: npm run build
