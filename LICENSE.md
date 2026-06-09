@@ -6,7 +6,7 @@ FSL-1.1-Apache-2.0
 
 ## Notice
 
-Copyright 2026 The Counsel
+Copyright 2026 Davendra Patel (trading as The Counsel)
 
 ## Terms and Conditions
 
